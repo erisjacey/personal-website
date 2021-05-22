@@ -2,6 +2,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Avatar, Typography } from '@material-ui/core';
+import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import ProfilePic from '../../assets/my-personal-picture_square.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -26,10 +27,19 @@ const NavBar = () => {
 
   const renderTopLeft = () => (
     <>
-      <Grid item xs>
+      <Grid item xs={4}>
         <Typography variant="h6" gutterBottom>
           Eris Jacey
         </Typography>
+      </Grid>
+      <Grid item xs>
+        <Email fontSize="large" />
+      </Grid>
+      <Grid item xs>
+        <GitHub fontSize="large" />
+      </Grid>
+      <Grid item xs>
+        <LinkedIn fontSize="large" />
       </Grid>
     </>
   );
@@ -72,7 +82,6 @@ const NavBar = () => {
         container
         item
         xs={2}
-        spacing={1}
         direction="row"
         justify="center"
         alignItems="center"
