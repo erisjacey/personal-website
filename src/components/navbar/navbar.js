@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Avatar, Typography } from '@material-ui/core';
+import {
+  Grid, Avatar, Typography, Link,
+} from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import ProfilePic from '../../assets/my-personal-picture_square.jpg';
 
@@ -24,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
   const classes = useStyles();
+  const preventDefault = (event) => event.preventDefault();
 
   const renderTopLeft = () => (
     <>
@@ -33,13 +36,19 @@ const NavBar = () => {
         </Typography>
       </Grid>
       <Grid item xs>
-        <Email fontSize="large" />
+        <Link href="mailto:eris_jacey@hotmail.com" target="_blank" rel="noopener">
+          <Email fontSize="large" />
+        </Link>
       </Grid>
       <Grid item xs>
-        <GitHub fontSize="large" />
+        <Link href="https://github.com/erisjacey" target="_blank" rel="noopener">
+          <GitHub fontSize="large" />
+        </Link>
       </Grid>
       <Grid item xs>
-        <LinkedIn fontSize="large" />
+        <Link href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/" target="_blank" rel="noopener">
+          <LinkedIn fontSize="large" />
+        </Link>
       </Grid>
     </>
   );
