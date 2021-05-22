@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { pink } from '@material-ui/core/colors';
 import NavBar from './components/navbar';
@@ -27,29 +28,53 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => {
-  const renderHeader = () => (
-    <NavBar />
-  );
-  return (
-    <div className="main-page">
-      <ThemeProvider theme={theme}>
-        {renderHeader()}
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="home" />
-            </Route>
-            <Route path="/home" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/blog" component={Blog} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
-        </Router>
-      </ThemeProvider>
-    </div>
-  );
+const RouteWithNavbar = ({
+  exact, path, component: Component, ...rest
+}) => (
+  <Route
+    exact={exact}
+    path={path}
+    {...rest}
+    component={(routeProps) => (
+      <>
+        <NavBar {...routeProps} />
+        <Component {...routeProps} />
+      </>
+    )}
+  />
+);
+
+const App = () => (
+  // const renderHeader = () => (
+  // <NavBar />
+  // );
+  <div className="main-page">
+    <ThemeProvider theme={theme}>
+      {/* {renderHeader()} */}
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="home" />
+          </Route>
+          <RouteWithNavbar exact path="/home" component={Home} />
+          <RouteWithNavbar exact path="/about" component={About} />
+          <RouteWithNavbar exact path="/projects" component={Projects} />
+          <RouteWithNavbar exact path="/blog" component={Blog} />
+          <RouteWithNavbar exact path="/contact" component={Contact} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </div>
+);
+
+RouteWithNavbar.propTypes = {
+  exact: PropTypes.bool,
+  path: PropTypes.string.isRequired,
+  component: PropTypes.func.isRequired,
+};
+
+RouteWithNavbar.defaultProps = {
+  exact: false,
 };
 
 export default App;

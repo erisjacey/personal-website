@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import {
+  NavLink,
+} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Grid, Avatar, Typography, Link,
@@ -31,9 +34,11 @@ const NavBar = () => {
   const renderTopLeft = () => (
     <>
       <Grid item xs={4}>
-        <Typography variant="h6" gutterBottom>
-          Eris Jacey
-        </Typography>
+        <NavLink to="/home">
+          <Typography variant="h6" gutterBottom>
+            Eris Jacey
+          </Typography>
+        </NavLink>
       </Grid>
       <Grid item xs>
         <Link href="mailto:eris_jacey@hotmail.com" target="_blank" rel="noopener">
@@ -56,62 +61,72 @@ const NavBar = () => {
   const renderTopRight = () => (
     <>
       <Grid item xs>
-        <Typography variant="h6" gutterBottom>
-          About
-        </Typography>
+        <NavLink to="/about">
+          <Typography variant="h6" gutterBottom>
+            About
+          </Typography>
+        </NavLink>
       </Grid>
       <Grid item xs>
-        <Typography variant="h6" gutterBottom>
-          Projects
-        </Typography>
+        <NavLink to="/projects">
+          <Typography variant="h6" gutterBottom>
+            Projects
+          </Typography>
+        </NavLink>
       </Grid>
       <Grid item xs>
-        <Typography variant="h6" gutterBottom>
-          Blog
-        </Typography>
+        <NavLink to="/blog">
+          <Typography variant="h6" gutterBottom>
+            Blog
+          </Typography>
+        </NavLink>
       </Grid>
       <Grid item xs>
-        <Typography variant="h6" gutterBottom>
-          Contact
-        </Typography>
+        <NavLink to="/contact">
+          <Typography variant="h6" gutterBottom>
+            Contact
+          </Typography>
+        </NavLink>
       </Grid>
     </>
   );
 
   return (
-    <Grid
-      container
-      spacing={1}
-      direction="row"
-      justify="space-around"
-      alignItems="center"
-      className={classes.root}
-    >
+    <>
       <Grid
         container
-        item
-        spacing={2}
-        xs={2}
-        direction="row"
-        justify="center"
-        alignItems="center"
-        className={classes.root}
-      >
-        {renderTopLeft()}
-      </Grid>
-      <Grid
-        container
-        item
-        xs={3}
         spacing={1}
         direction="row"
-        justify="flex-end"
+        justify="space-around"
         alignItems="center"
         className={classes.root}
       >
-        {renderTopRight()}
+        <Grid
+          container
+          item
+          spacing={2}
+          xs={2}
+          direction="row"
+          justify="center"
+          alignItems="center"
+          className={classes.root}
+        >
+          {renderTopLeft()}
+        </Grid>
+        <Grid
+          container
+          item
+          xs={3}
+          spacing={1}
+          direction="row"
+          justify="flex-end"
+          alignItems="center"
+          className={classes.root}
+        >
+          {renderTopRight()}
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 };
 
