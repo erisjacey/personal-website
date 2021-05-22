@@ -37,17 +37,17 @@ const NavBar = () => {
       </Grid>
       <Grid item xs>
         <Link href="mailto:eris_jacey@hotmail.com" target="_blank" rel="noopener">
-          <Email fontSize="large" />
+          <Email fontSize="large" color="primary" />
         </Link>
       </Grid>
       <Grid item xs>
         <Link href="https://github.com/erisjacey" target="_blank" rel="noopener">
-          <GitHub fontSize="large" />
+          <GitHub fontSize="large" color="primary" />
         </Link>
       </Grid>
       <Grid item xs>
         <Link href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/" target="_blank" rel="noopener">
-          <LinkedIn fontSize="large" />
+          <LinkedIn fontSize="large" color="primary" />
         </Link>
       </Grid>
     </>
