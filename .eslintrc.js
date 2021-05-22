@@ -19,6 +19,9 @@ module.exports = {
   ],
   settings: {
     'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src'],
+      },
       alias: {
         map: [
           ['myAssets', './src/assets'],
