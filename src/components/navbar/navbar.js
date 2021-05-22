@@ -81,6 +81,7 @@ const NavBar = () => {
       <Grid
         container
         item
+        spacing={2}
         xs={2}
         direction="row"
         justify="center"
@@ -92,7 +93,7 @@ const NavBar = () => {
       <Grid
         container
         item
-        xs={5}
+        xs={3}
         spacing={1}
         direction="row"
         justify="flex-end"
