@@ -17,6 +17,18 @@ module.exports = {
   plugins: [
     'react',
   ],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['myAssets', './src/assets'],
+          ['myComponents', './src/components'],
+          ['myPages', './src/pages'],
+        ],
+        extensions: ['.ts', '.js', '.jsx', '.json'],
+      },
+    },
+  },
   rules: {
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-one-expression-per-line': 'off',
