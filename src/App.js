@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './components/header';
+import NavBar from './components/navbar';
 import './App.scss';
 
 const App = () => {
   const renderHeader = () => (
-    <Header />
+    <NavBar />
   );
   const renderBody = () => (
-    <span>This is a work in progress. Stay tuned!</span>
+    <h1>This is a work in progress. Stay tuned!</h1>
   );
   return (
     <div className="main-page">
