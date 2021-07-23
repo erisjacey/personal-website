@@ -6,13 +6,15 @@ module.exports = {
   context: __dirname,
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'main.js',
     publicPath: '/',
   },
   devServer: {
     historyApiFallback: true,
+    contentBase: './build',
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
