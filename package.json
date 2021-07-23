@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "deploy": "gh-pages -d dist",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "webpack-dev-server": "webpack-dev-server",
@@ -47,7 +47,6 @@
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
-    "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
