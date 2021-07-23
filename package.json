@@ -24,7 +24,11 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "webpack-dev-server": "webpack-dev-server",
+    "dev": "webpack serve --mode development --env development",
+    "prod": "webpack --mode=production",
+    "serve": "webpack serve --config config/webpack.dev.js --progress"
   },
   "browserslist": {
     "production": [
@@ -39,6 +43,12 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -47,6 +57,16 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gh-pages": "^3.1.0"
+    "file-loader": "^6.1.1",
+    "gh-pages": "^3.1.0",
+    "html-webpack-plugin": "^5.3.2",
+    "path": "^0.12.7",
+    "sass": "^1.35.2",
+    "sass-loader": "^10.2.0",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.1",
+    "webpack-manifest-plugin": "^3.1.1",
+    "webpack-nano": "^1.1.1"
   }
 }

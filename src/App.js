@@ -8,12 +8,12 @@ import {
 import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { pink } from '@material-ui/core/colors';
-import NavBar from './components/navbar';
-import Home from './components/home';
-import About from './components/about';
-import Projects from './components/projects';
-import Blog from './components/blog';
-import Contact from './components/contact';
+import NavBar from 'myNavbarPage';
+import Home from 'myHomePage';
+import About from 'myAboutPage';
+import Projects from 'myProjectsPage';
+import Blog from 'myBlogPage';
+import Contact from 'myContactPage';
 import './App.scss';
 
 const theme = createMuiTheme({
