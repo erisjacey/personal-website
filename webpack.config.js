@@ -47,6 +47,7 @@ module.exports = {
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html',
       favicon: 'public/favicon.ico',
+      inject: true,
     }),
     new WebpackManifestPlugin({
       filename: 'public/manifest.json',
