@@ -31,7 +31,6 @@ module.exports = {
           ['myBlogPage', './src/pages/blog'],
           ['myContactPage', './src/pages/contact'],
           ['myHomePage', './src/pages/home'],
-          ['myNavbarPage', './src/pages/navbar'],
           ['myProjectsPage', './src/pages/projects'],
         ],
         extensions: ['.ts', '.js', '.jsx', '.json'],

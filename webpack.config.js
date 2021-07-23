@@ -53,12 +53,11 @@ module.exports = {
   resolve: {
     alias: {
       myAssets: path.resolve(__dirname, 'src/assets/'),
-      myComponents: path.resolve(__dirname, 'src/pages/'),
+      myComponents: path.resolve(__dirname, 'src/components/'),
       myAboutPage: path.resolve(__dirname, 'src/pages/about/'),
       myBlogPage: path.resolve(__dirname, 'src/pages/blog/'),
       myContactPage: path.resolve(__dirname, 'src/pages/contact/'),
       myHomePage: path.resolve(__dirname, 'src/pages/home/'),
-      myNavbarPage: path.resolve(__dirname, 'src/pages/navbar/'),
       myProjectsPage: path.resolve(__dirname, 'src/pages/projects/'),
     },
   },

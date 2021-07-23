@@ -8,7 +8,7 @@ import {
 import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { pink } from '@material-ui/core/colors';
-import NavBar from 'myNavbarPage';
+import NavBar from 'myComponents/navbar';
 import Home from 'myHomePage';
 import About from 'myAboutPage';
 import Projects from 'myProjectsPage';
