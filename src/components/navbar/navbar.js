@@ -1,10 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import {
+  Container, Navbar, Nav, NavDropdown,
+} from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Avatar, Typography, Link } from '@material-ui/core';
+import {
+  Grid, Avatar, Typography, Link,
+} from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
-import ProfilePic from '../../assets/my-personal-picture_square.jpg';
+import ProfilePic from 'myAssets/my-personal-picture_square.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -100,41 +105,19 @@ const NavBar = () => {
   );
 
   return (
-    <>
-      <Grid
-        container
-        spacing={1}
-        direction="row"
-        justify="space-around"
-        alignItems="center"
-        className={classes.root}
-      >
-        <Grid
-          container
-          item
-          spacing={2}
-          xs={2}
-          direction="row"
-          justify="center"
-          alignItems="center"
-          className={classes.root}
-        >
-          {renderTopLeft()}
-        </Grid>
-        <Grid
-          container
-          item
-          xs={3}
-          spacing={1}
-          direction="row"
-          justify="flex-end"
-          alignItems="center"
-          className={classes.root}
-        >
-          {renderTopRight()}
-        </Grid>
-      </Grid>
-    </>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="/home">Eris Jacey</Navbar.Brand>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
+            <Nav.Link href="/projects">Projects</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
