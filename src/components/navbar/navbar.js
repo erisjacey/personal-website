@@ -1,12 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import {
-  NavLink,
-} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  Grid, Avatar, Typography, Link,
-} from '@material-ui/core';
+import { Grid, Avatar, Typography, Link } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import ProfilePic from '../../assets/my-personal-picture_square.jpg';
 
@@ -41,17 +37,29 @@ const NavBar = () => {
         </NavLink>
       </Grid>
       <Grid item xs>
-        <Link href="mailto:eris_jacey@hotmail.com" target="_blank" rel="noopener">
+        <Link
+          href="mailto:eris_jacey@hotmail.com"
+          target="_blank"
+          rel="noopener"
+        >
           <Email fontSize="large" color="primary" />
         </Link>
       </Grid>
       <Grid item xs>
-        <Link href="https://github.com/erisjacey" target="_blank" rel="noopener">
+        <Link
+          href="https://github.com/erisjacey"
+          target="_blank"
+          rel="noopener"
+        >
           <GitHub fontSize="large" color="primary" />
         </Link>
       </Grid>
       <Grid item xs>
-        <Link href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/" target="_blank" rel="noopener">
+        <Link
+          href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
+          target="_blank"
+          rel="noopener"
+        >
           <LinkedIn fontSize="large" color="primary" />
         </Link>
       </Grid>
