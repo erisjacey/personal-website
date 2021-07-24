@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import ProfilePic from 'myAssets/my-personal-picture_square.jpg';
+import './navbar.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -105,15 +106,15 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary4" expand="lg" sticky="top" variant="light">
       <Container>
-        <Navbar.Brand href="/home">Eris Jacey</Navbar.Brand>
+        <Navbar.Brand className="navbar__brand" href="/home">Eris Jacey</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/blog">Blog</Nav.Link>
-            <Nav.Link href="/projects">Projects</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
+          <Nav justify>
+            <Nav.Link className="navbar__link" href="/about">About</Nav.Link>
+            <Nav.Link className="navbar__link" href="/blog">Blog</Nav.Link>
+            <Nav.Link className="navbar__link" href="/projects">Projects</Nav.Link>
+            <Nav.Link className="navbar__link" href="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

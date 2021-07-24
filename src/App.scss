@@ -1,5 +1,31 @@
+$primary1: #17252a;
+$primary2: #2b7a78;
+$primary3: #3aafa9;
+$primary4: #def2f1;
+$primary5: #feffff;
+
+$theme-colors: (
+  'info': tomato,
+  'danger': teal,
+  'primary1': $primary1,
+  'primary2': $primary2,
+  'primary3': $primary3,
+  'primary4': $primary4,
+  'primary5': $primary5,
+  'black': black,
+  'white': white,
+);
+
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .main-page {
   text-align: center;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $primary4;
 }
 
 // .App-header {
