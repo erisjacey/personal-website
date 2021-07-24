@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { pink } from '@material-ui/core/colors';
 import NavBar from 'myComponents/navbar';
+import Footer from 'myComponents/footer';
 import Home from 'myHomePage';
 import About from 'myAboutPage';
 import Projects from 'myProjectsPage';
@@ -18,12 +19,15 @@ import './App.scss';
 
 const theme = createMuiTheme({
   palette: {
-    primary: pink,
+    primary: {
+      light: '#feffff;',
+      main: '#def2f1',
+      dark: '#17252a',
+    },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#feffff;',
+      main: '#3aafa9',
+      dark: '#2b7a78',
     },
   },
 });
@@ -39,6 +43,7 @@ const RouteWithNavbar = ({
       <>
         <NavBar {...routeProps} />
         <Component {...routeProps} />
+        <Footer {...routeProps} />
       </>
     )}
   />

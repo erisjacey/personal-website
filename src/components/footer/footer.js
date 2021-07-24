@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import ProfilePic from 'myAssets/my-personal-picture_square.jpg';
-import './navbar.scss';
+import './footer.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = () => {
+const Footer = () => {
   const classes = useStyles();
   const preventDefault = (event) => event.preventDefault();
 
@@ -105,20 +105,39 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar bg="primary4" expand="lg" sticky="top" variant="light">
+    <Navbar bg="primary1" expand="lg" variant="dark">
       <Container>
-        <Navbar.Brand className="navbar__brand" href="/home">Eris Jacey</Navbar.Brand>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav justify>
-            <Nav.Link className="navbar__link" href="/about">About</Nav.Link>
-            <Nav.Link className="navbar__link" href="/blog">Blog</Nav.Link>
-            <Nav.Link className="navbar__link" href="/projects">Projects</Nav.Link>
-            <Nav.Link className="navbar__link" href="/contact">Contact</Nav.Link>
-          </Nav>
+        <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
+          <Navbar.Text>
+            Website developed by Eris Jacey Masagca, 2021.
+          </Navbar.Text>
+        </Navbar.Collapse>
+        <Navbar.Collapse className="footer__right" id="basic-navbar-nav">
+          <Link
+            href="mailto:eris_jacey@hotmail.com"
+            target="_blank"
+            rel="noopener"
+          >
+            <Email fontSize="large" color="primary" />
+          </Link>
+          <Link
+            href="https://github.com/erisjacey"
+            target="_blank"
+            rel="noopener"
+          >
+            <GitHub fontSize="large" color="primary" />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
+            target="_blank"
+            rel="noopener"
+          >
+            <LinkedIn fontSize="large" color="primary" />
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
 
-export default NavBar;
+export default Footer;
