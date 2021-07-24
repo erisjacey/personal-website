@@ -105,9 +105,13 @@ const NavBar = () => {
   );
 
   return (
-    <Navbar bg="primary4" expand="lg" sticky="top" variant="light">
+    <Navbar bg="primary3" expand="lg" sticky="top" variant="dark">
       <Container>
-        <Navbar.Brand className="navbar__brand" href="/home">Eris Jacey</Navbar.Brand>
+        <Navbar.Brand href="/home">
+          <div className="navbar__brand">
+            Eris Jacey
+          </div>
+        </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav justify>
             <Nav.Link className="navbar__link" href="/about">About</Nav.Link>

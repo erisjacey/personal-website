@@ -1,9 +1,14 @@
+@import 'src/App.scss';
+
 .navbar {
   &__brand {
-    font-size: 35px;
+    color: $primary5;
+    font-size: 25px;
+    font-weight: bold;
   }
 
   &__link {
+    color: white;
     font-size: 18px;
     font-weight: 500;
   }

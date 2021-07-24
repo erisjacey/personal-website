@@ -121,7 +121,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  <Email fontSize="large" color="primary" />
+                  <Email fontSize="large" className="footer__right__icon" />
                 </Link>
               </Col>
               <Col sm={{ span: 1 }}>
@@ -130,7 +130,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  <GitHub fontSize="large" color="primary" />
+                  <GitHub fontSize="large" className="footer__right__icon" />
                 </Link>
               </Col>
               <Col sm={{ span: 1 }}>
@@ -139,7 +139,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener"
                 >
-                  <LinkedIn fontSize="large" color="primary" />
+                  <LinkedIn fontSize="large" className="footer__right__icon" />
                 </Link>
               </Col>
             </Row>
