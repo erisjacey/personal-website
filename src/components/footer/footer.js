@@ -115,7 +115,7 @@ const Footer = () => {
         <Navbar.Collapse className="footer__right" id="basic-navbar-nav">
           <Container>
             <Row>
-              <Col sm={{ span: 1, offset: 7 }}>
+              <Col sm={{ span: 1, offset: 9 }}>
                 <Link
                   href="mailto:eris_jacey@hotmail.com"
                   target="_blank"
