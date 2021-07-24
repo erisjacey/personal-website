@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  Container, Navbar, Nav, NavDropdown,
+  Container, Row, Col, Navbar, Nav, NavDropdown,
 } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -108,32 +108,42 @@ const Footer = () => {
     <Navbar bg="primary1" expand="lg" variant="dark">
       <Container>
         <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
-          <Navbar.Text>
+          <div className="footer__left__text">
             Website developed by Eris Jacey Masagca, 2021.
-          </Navbar.Text>
+          </div>
         </Navbar.Collapse>
         <Navbar.Collapse className="footer__right" id="basic-navbar-nav">
-          <Link
-            href="mailto:eris_jacey@hotmail.com"
-            target="_blank"
-            rel="noopener"
-          >
-            <Email fontSize="large" color="primary" />
-          </Link>
-          <Link
-            href="https://github.com/erisjacey"
-            target="_blank"
-            rel="noopener"
-          >
-            <GitHub fontSize="large" color="primary" />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
-            target="_blank"
-            rel="noopener"
-          >
-            <LinkedIn fontSize="large" color="primary" />
-          </Link>
+          <Container>
+            <Row>
+              <Col sm={{ span: 1, offset: 7 }}>
+                <Link
+                  href="mailto:eris_jacey@hotmail.com"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <Email fontSize="large" color="primary" />
+                </Link>
+              </Col>
+              <Col sm={{ span: 1 }}>
+                <Link
+                  href="https://github.com/erisjacey"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <GitHub fontSize="large" color="primary" />
+                </Link>
+              </Col>
+              <Col sm={{ span: 1 }}>
+                <Link
+                  href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <LinkedIn fontSize="large" color="primary" />
+                </Link>
+              </Col>
+            </Row>
+          </Container>
         </Navbar.Collapse>
       </Container>
     </Navbar>

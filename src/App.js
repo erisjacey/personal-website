@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { pink } from '@material-ui/core/colors';
 import NavBar from 'myComponents/navbar';
 import Footer from 'myComponents/footer';
 import Home from 'myHomePage';

@@ -1,10 +1,15 @@
+@import 'src/App.scss';
+
 .footer {
+  &__left {
+    &__text {
+      color: $primary5;
+    }
+  }
+
   &__right {
-    font-size: 40;
-    justify-content: end;
   }
 }
 
 .navbar-collapse {
-  justify-content: end;
 }
