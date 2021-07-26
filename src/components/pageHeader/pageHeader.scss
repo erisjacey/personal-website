@@ -1,1 +1,24 @@
 @import 'src/App.scss';
+
+.page-header {
+  background-color: $primary4;
+  padding-top: 5%;
+  padding-bottom: 3%;
+
+  &__title {
+    font-size: 70px;
+    font-weight: bolder;
+  }
+
+  &__sub-header {
+    margin: auto;
+    width: 50%;
+  }
+
+  &__line {
+    margin: auto;
+    width: 20%;
+    border-bottom: 3px solid $primary2;
+    margin-top: 5%;
+  }
+}
