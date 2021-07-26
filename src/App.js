@@ -17,6 +17,9 @@ import Contact from 'myContactPage';
 import './App.scss';
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Open Sans',
+  },
   palette: {
     primary: {
       light: '#feffff;',
