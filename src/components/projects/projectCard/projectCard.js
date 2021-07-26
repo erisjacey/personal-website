@@ -49,8 +49,8 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" color="secondaryDark">
-          Learn More
+        <Button size="small" color="secondaryDark" href={link}>
+          See More
         </Button>
       </CardActions>
     </Card>

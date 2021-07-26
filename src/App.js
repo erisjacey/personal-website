@@ -45,7 +45,7 @@ const RouteWithComponents = ({
       <>
         <NavBar />
         <div className="main-page__body">
-          <Component {...routeProps} />
+          <Component path={path} {...routeProps} />
         </div>
         <Footer />
       </>
@@ -88,7 +88,6 @@ const App = () => {
             </Route>
             {pages.map((page) => (
               <RouteWithComponents
-                exact
                 path={page.path}
                 component={page.component}
               />
