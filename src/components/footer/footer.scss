@@ -1,6 +1,8 @@
 @import 'src/App.scss';
 
 .footer {
+  height: 75px;
+
   &__left {
     &__text {
       color: $primary5;
@@ -12,7 +14,4 @@
       color: $primary5;
     }
   }
-}
-
-.navbar-collapse {
 }

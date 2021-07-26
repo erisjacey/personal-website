@@ -21,6 +21,11 @@ $theme-colors: (
 
 .main-page {
   text-align: center;
+
+  &__body {
+    margin: auto;
+    width: 70%;
+  }
 }
 
 body {

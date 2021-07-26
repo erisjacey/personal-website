@@ -105,7 +105,7 @@ const Footer = () => {
   );
 
   return (
-    <Navbar bg="primary1" expand="lg" variant="dark">
+    <Navbar bg="primary1" expand="lg" variant="dark" className="footer">
       <Container>
         <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
           <div className="footer__left__text">

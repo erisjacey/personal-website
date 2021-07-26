@@ -31,53 +31,79 @@ const theme = createMuiTheme({
   },
 });
 
-const RouteWithNavbar = ({
+const RouteWithComponents = ({
   exact, path, component: Component, ...rest
 }) => (
   <Route
     exact={exact}
     path={path}
     {...rest}
-    component={(routeProps) => (
+    render={(routeProps) => (
       <>
-        <NavBar {...routeProps} />
-        <Component {...routeProps} />
-        <Footer {...routeProps} />
+        <NavBar />
+        <div className="main-page__body">
+          <Component {...routeProps} />
+        </div>
+        <Footer />
       </>
     )}
   />
 );
 
-const App = () => (
-  // const renderHeader = () => (
-  // <NavBar />
-  // );
-  <div className="main-page">
-    <ThemeProvider theme={theme}>
-      {/* {renderHeader()} */}
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="home" />
-          </Route>
-          <RouteWithNavbar exact path="/home" component={Home} />
-          <RouteWithNavbar exact path="/about" component={About} />
-          <RouteWithNavbar exact path="/projects" component={Projects} />
-          <RouteWithNavbar exact path="/blog" component={Blog} />
-          <RouteWithNavbar exact path="/contact" component={Contact} />
-        </Switch>
-      </Router>
-    </ThemeProvider>
-  </div>
-);
+const App = () => {
+  const pages = [
+    {
+      path: '/home',
+      component: Home,
+    },
+    {
+      path: '/about',
+      component: About,
+    },
+    {
+      path: '/projects',
+      component: Projects,
+    },
+    {
+      path: '/blog',
+      component: Blog,
+    },
+    {
+      path: '/contact',
+      component: Contact,
+    },
+  ];
 
-RouteWithNavbar.propTypes = {
+  return (
+    <div className="main-page">
+      <ThemeProvider theme={theme}>
+        {/* {renderHeader()} */}
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="home" />
+            </Route>
+            {pages.map((page) => (
+              <RouteWithComponents
+                exact
+                path={page.path}
+                component={page.component}
+              />
+            ))}
+          </Switch>
+        </Router>
+      </ThemeProvider>
+    </div>
+  );
+};
+
+RouteWithComponents.propTypes = {
   exact: PropTypes.bool,
   path: PropTypes.string.isRequired,
   component: PropTypes.func.isRequired,
 };
 
-RouteWithNavbar.defaultProps = {
+RouteWithComponents.defaultProps = {
   exact: false,
 };
 
