@@ -10,7 +10,7 @@ import './projects.scss';
 
 const Projects = () => {
   const PAGE_NAME = 'Projects';
-  const PAGE_SUB_HEADER = 'This is the Projects page which is still a WIP. Stay tuned!';
+  const PAGE_SUB_HEADER = 'A collection of the projects I have done so far.';
 
   const PROJECT_DAILY_CAKEY_BOT = {
     name: 'DailyCakeyBot',
