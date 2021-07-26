@@ -14,7 +14,7 @@ const Projects = () => {
 
   const PROJECT_DAILY_CAKEY_BOT = {
     name: 'DailyCakeyBot',
-    description: 'A simple for generating random dessert recipes',
+    description: 'A simple Telegram bot for generating random dessert recipes',
     image: ThumbnailDailyCakeyBot,
     link: '/dailey-cakey-bot',
   };
