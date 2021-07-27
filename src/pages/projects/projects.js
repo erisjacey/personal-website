@@ -24,6 +24,7 @@ const Projects = ({ path }) => {
     description: 'A simple Telegram bot for generating random dessert recipes',
     image: ThumbnailDailyCakeyBot,
     link: '/daily-cakey-bot',
+    github: 'https://github.com/erisjacey/daily-cakey-bot',
   };
 
   const PROJECT_PERSONAL_WEBSITE = {
@@ -31,6 +32,7 @@ const Projects = ({ path }) => {
     description: 'My own personal website',
     image: ThumbnailPersonalWebsite,
     link: '/personal-website',
+    github: 'https://github.com/erisjacey/personal-website',
   };
 
   const PROJECTS = [
@@ -53,6 +55,7 @@ const Projects = ({ path }) => {
             image={project.image}
             description={project.description}
             link={`${path}${project.link}`}
+            github={project.github}
           />
         </Grid>
       ))}

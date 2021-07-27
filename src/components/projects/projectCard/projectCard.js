@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Card, CardActionArea, CardActions, CardContent, CardMedia,
-  Typography, Button,
+  Typography, Button, Link,
 } from '@material-ui/core';
+import { GitHub } from '@material-ui/icons';
 import './projectCard.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,11 +22,21 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     height: '40px',
+    direction: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    left: {
+      justifySelf: 'flex-start',
+    },
+    right: {
+      justifySelf: 'flex-end',
+    },
   },
 }));
 
 const ProjectCard = ({
-  name, image, description, link,
+  name, image, description, link, github,
 }) => {
   const classes = useStyles();
 
@@ -49,9 +60,18 @@ const ProjectCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" color="secondaryDark" href={link}>
+        <Button size="small" color="secondaryDark" href={link} className={classes.button.left}>
           See More
         </Button>
+        <Link
+          href={github}
+          target="_blank"
+          rel="noopener"
+          color="textPrimary"
+          className={classes.button.right}
+        >
+          <GitHub fontSize="small" />
+        </Link>
       </CardActions>
     </Card>
   );
@@ -62,6 +82,7 @@ ProjectCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
 };
 
 export default ProjectCard;
