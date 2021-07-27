@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   Accordion, AccordionDetails, AccordionSummary,
   List, ListItem, ListItemText,
+  Table, TableContainer, TableHead, TableRow, TableCell, TableBody,
   Grid, Typography, Button, Link,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
@@ -50,17 +51,22 @@ const ModuleReviewAccordion = ({ module }) => {
   );
 
   const renderExtraInfo = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      direction="row"
+      justifyContent="space-around"
+      alignItems="center"
+    >
+      <Grid item xs={4}>
         {renderText(`Prerequisites: ${prereqs}`)}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item xs={4}>
         {renderText(`Exam: ${hasExam}`)}
-      </ListItem>
-      <ListItem>
-        {renderText(<Link href={link}>Link to NUSMods</Link>)}
-      </ListItem>
-    </List>
+      </Grid>
+      <Grid item xs={4}>
+        {renderText(<Link href={link} color="secondary">Link to NUSMods</Link>)}
+      </Grid>
+    </Grid>
   );
 
   const renderAssessment = () => (
@@ -69,7 +75,24 @@ const ModuleReviewAccordion = ({ module }) => {
         {renderTitle('Assessment')}
       </ListItem>
       <ListItem>
-        {renderText('Assessment')}
+        <TableContainer component="div">
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Component</TableCell>
+                <TableCell>Weightage</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {assessment.map((item) => (
+                <TableRow key={item.component}>
+                  <TableCell>{item.component}</TableCell>
+                  <TableCell>{item.weightage}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </ListItem>
     </List>
   );
