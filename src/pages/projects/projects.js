@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core';
 import PageHeader from 'myComponents/pageHeader';
 import ProjectCard from 'myProjectsComponents/projectCard';
-import ThumbnailDailyCakeyBot from 'myAssets/projects_daily-cakey-bot_thumbnail.jpeg';
-import ThumbnailPersonalWebsite from 'myAssets/projects_personal-website_thumbnail.jpeg';
+import ThumbnailDailyCakeyBot from 'myProjectsAssets/daily-cakey-bot_thumbnail.jpeg';
+import ThumbnailPersonalWebsite from 'myProjectsAssets/personal-website_thumbnail.jpeg';
 import DailyCakeyBot from './dailyCakeyBot';
 import PersonalWebsite from './personalWebsite';
 import './projects.scss';
