@@ -6,6 +6,15 @@
 
     &__title {
       padding-bottom: 1%;
+      text-align: start;
+    }
+
+    &__score {
+      padding-bottom: 0.5%;
+    }
+
+    &__text {
+      text-align: start;
     }
   }
 }

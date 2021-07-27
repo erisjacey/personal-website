@@ -31,6 +31,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     color: theme.palette.text.primary,
   },
+  sectionScore: {
+    fontSize: theme.typography.pxToRem(14),
+    fontWeight: 'bold',
+  },
   sectionText: {
     fontSize: theme.typography.pxToRem(14),
   },
@@ -52,6 +56,12 @@ const ModuleReviewAccordion = ({ module }) => {
     </Typography>
   );
 
+  const renderScore = (score) => (
+    <Typography className={classes.sectionScore}>
+      {score}
+    </Typography>
+  );
+
   const renderText = (text) => (
     <Typography className={classes.sectionText}>
       {text}
@@ -67,6 +77,9 @@ const ModuleReviewAccordion = ({ module }) => {
       alignItems="flex-start"
       className="module-review-accordion__section"
     >
+      <Grid item className="module-review-accordion__section__title">
+        {renderTitle('Extra Information')}
+      </Grid>
       <Grid item>
         {renderText(`Prerequisites: ${prereqs}`)}
       </Grid>
@@ -140,7 +153,7 @@ const ModuleReviewAccordion = ({ module }) => {
       <Grid item className="module-review-accordion__section__title">
         {renderTitle('Overview')}
       </Grid>
-      <Grid item>
+      <Grid item className="module-review-accordion__section__text">
         {renderText(overview)}
       </Grid>
     </Grid>
@@ -158,10 +171,10 @@ const ModuleReviewAccordion = ({ module }) => {
       <Grid item className="module-review-accordion__section__title">
         {renderTitle('Workload')}
       </Grid>
-      <Grid item>
-        {renderText(workload.score)}
+      <Grid item className="module-review-accordion__section__score">
+        {renderScore(workload.score)}
       </Grid>
-      <Grid item>
+      <Grid item className="module-review-accordion__section__text">
         {renderText(workload.description)}
       </Grid>
     </Grid>
@@ -179,10 +192,10 @@ const ModuleReviewAccordion = ({ module }) => {
       <Grid item className="module-review-accordion__section__title">
         {renderTitle('Difficulty')}
       </Grid>
-      <Grid item>
-        {renderText(difficulty.score)}
+      <Grid item className="module-review-accordion__section__score">
+        {renderScore(difficulty.score)}
       </Grid>
-      <Grid item>
+      <Grid item className="module-review-accordion__section__text">
         {renderText(difficulty.description)}
       </Grid>
     </Grid>
@@ -200,10 +213,10 @@ const ModuleReviewAccordion = ({ module }) => {
       <Grid item className="module-review-accordion__section__title">
         {renderTitle('Grade')}
       </Grid>
-      <Grid item>
+      <Grid item className="module-review-accordion__section__text">
         {renderText(`Expected: ${expected}`)}
       </Grid>
-      <Grid item>
+      <Grid item className="module-review-accordion__section__text">
         {renderText(`Actual: ${actual}`)}
       </Grid>
     </Grid>
