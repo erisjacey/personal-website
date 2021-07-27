@@ -1,1 +1,11 @@
 @import 'src/App.scss';
+
+.module-review-accordion {
+  &__section {
+    padding: 2% 3%;
+
+    &__title {
+      padding-bottom: 1%;
+    }
+  }
+}

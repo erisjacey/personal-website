@@ -5,7 +5,7 @@ import {
   Accordion, AccordionDetails, AccordionSummary,
   List, ListItem, ListItemText,
   Table, TableContainer, TableHead, TableRow, TableCell, TableBody,
-  Grid, Typography, Button, Link,
+  Grid, Typography, Button, Link, Paper,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import './moduleReviewAccordion.scss';
@@ -15,16 +15,24 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(18),
   },
   secondaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(18),
     fontWeight: 'bold',
     color: theme.palette.text.primary,
   },
   tertiaryHeading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(18),
     color: theme.palette.text.secondary,
+  },
+  sectionHeading: {
+    fontSize: theme.typography.pxToRem(18),
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
+  },
+  sectionText: {
+    fontSize: theme.typography.pxToRem(14),
   },
 }));
 
@@ -39,13 +47,13 @@ const ModuleReviewAccordion = ({ module }) => {
   const { expected, actual } = grades;
 
   const renderTitle = (title) => (
-    <Typography>
+    <Typography className={classes.sectionHeading}>
       {title}
     </Typography>
   );
 
   const renderText = (text) => (
-    <Typography>
+    <Typography className={classes.sectionText}>
       {text}
     </Typography>
   );
@@ -53,101 +61,152 @@ const ModuleReviewAccordion = ({ module }) => {
   const renderExtraInfo = () => (
     <Grid
       container
-      direction="row"
-      justifyContent="space-around"
-      alignItems="center"
+      item
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      className="module-review-accordion__section"
     >
-      <Grid item xs={4}>
+      <Grid item>
         {renderText(`Prerequisites: ${prereqs}`)}
       </Grid>
-      <Grid item xs={4}>
+      <Grid item>
         {renderText(`Exam: ${hasExam}`)}
       </Grid>
-      <Grid item xs={4}>
+      <Grid item>
         {renderText(<Link href={link} color="secondary">Link to NUSMods</Link>)}
       </Grid>
     </Grid>
   );
 
   const renderAssessment = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      item
+      direction="column"
+      className="module-review-accordion__section"
+    >
+      <Grid item className="module-review-accordion__section__title">
         {renderTitle('Assessment')}
-      </ListItem>
-      <ListItem>
-        <TableContainer component="div">
+      </Grid>
+      <Grid item>
+        <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Component</TableCell>
-                <TableCell>Weightage</TableCell>
+                <TableCell>
+                  <Typography>
+                    {renderText('Component')}
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography>
+                    {renderText('Weightage')}
+                  </Typography>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {assessment.map((item) => (
                 <TableRow key={item.component}>
-                  <TableCell>{item.component}</TableCell>
-                  <TableCell>{item.weightage}</TableCell>
+                  <TableCell>
+                    <Typography>
+                      {renderText(item.component)}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography>
+                      {renderText(item.weightage)}
+                    </Typography>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-      </ListItem>
-    </List>
+      </Grid>
+    </Grid>
   );
 
   const renderOverview = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      item
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      className="module-review-accordion__section"
+    >
+      <Grid item className="module-review-accordion__section__title">
         {renderTitle('Overview')}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(overview)}
-      </ListItem>
-    </List>
+      </Grid>
+    </Grid>
   );
 
   const renderWorkload = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      item
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      className="module-review-accordion__section"
+    >
+      <Grid item className="module-review-accordion__section__title">
         {renderTitle('Workload')}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(workload.score)}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(workload.description)}
-      </ListItem>
-    </List>
+      </Grid>
+    </Grid>
   );
 
   const renderDifficulty = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      item
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      className="module-review-accordion__section"
+    >
+      <Grid item className="module-review-accordion__section__title">
         {renderTitle('Difficulty')}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(difficulty.score)}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(difficulty.description)}
-      </ListItem>
-    </List>
+      </Grid>
+    </Grid>
   );
 
   const renderGrade = () => (
-    <List>
-      <ListItem>
+    <Grid
+      container
+      item
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      className="module-review-accordion__section"
+    >
+      <Grid item className="module-review-accordion__section__title">
         {renderTitle('Grade')}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(`Expected: ${expected}`)}
-      </ListItem>
-      <ListItem>
+      </Grid>
+      <Grid item>
         {renderText(`Actual: ${actual}`)}
-      </ListItem>
-    </List>
+      </Grid>
+    </Grid>
   );
 
   return (
@@ -176,26 +235,19 @@ const ModuleReviewAccordion = ({ module }) => {
         </Grid>
       </AccordionSummary>
       <AccordionDetails>
-        <List>
-          <ListItem>
-            {renderExtraInfo()}
-          </ListItem>
-          <ListItem>
-            {renderAssessment()}
-          </ListItem>
-          <ListItem>
-            {renderOverview()}
-          </ListItem>
-          <ListItem>
-            {renderWorkload()}
-          </ListItem>
-          <ListItem>
-            {renderDifficulty()}
-          </ListItem>
-          <ListItem>
-            {renderGrade()}
-          </ListItem>
-        </List>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="flex-start"
+        >
+          {renderExtraInfo()}
+          {renderAssessment()}
+          {renderOverview()}
+          {renderWorkload()}
+          {renderDifficulty()}
+          {renderGrade()}
+        </Grid>
       </AccordionDetails>
     </Accordion>
   );
