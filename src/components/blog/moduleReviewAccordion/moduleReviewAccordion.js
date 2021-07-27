@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryHeading: {
     fontSize: theme.typography.pxToRem(15),
+    fontWeight: 'bold',
     color: theme.palette.text.primary,
   },
   tertiaryHeading: {
