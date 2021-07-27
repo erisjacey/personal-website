@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Accordion, AccordionDetails, AccordionSummary,
+  List, ListItem, ListItemText,
   Grid, Typography, Button, Link,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
@@ -34,7 +35,97 @@ const ModuleReviewAccordion = ({ module }) => {
     link, assessment, review, grades,
   } = module;
   const { overview, workload, difficulty } = review;
-  const { expectedGrade, actualGrade } = grades;
+  const { expected, actual } = grades;
+
+  const renderTitle = (title) => (
+    <Typography>
+      {title}
+    </Typography>
+  );
+
+  const renderText = (text) => (
+    <Typography>
+      {text}
+    </Typography>
+  );
+
+  const renderExtraInfo = () => (
+    <List>
+      <ListItem>
+        {renderText(`Prerequisites: ${prereqs}`)}
+      </ListItem>
+      <ListItem>
+        {renderText(`Exam: ${hasExam}`)}
+      </ListItem>
+      <ListItem>
+        {renderText(<Link href={link}>Link to NUSMods</Link>)}
+      </ListItem>
+    </List>
+  );
+
+  const renderAssessment = () => (
+    <List>
+      <ListItem>
+        {renderTitle('Assessment')}
+      </ListItem>
+      <ListItem>
+        {renderText('Assessment')}
+      </ListItem>
+    </List>
+  );
+
+  const renderOverview = () => (
+    <List>
+      <ListItem>
+        {renderTitle('Overview')}
+      </ListItem>
+      <ListItem>
+        {renderText(overview)}
+      </ListItem>
+    </List>
+  );
+
+  const renderWorkload = () => (
+    <List>
+      <ListItem>
+        {renderTitle('Workload')}
+      </ListItem>
+      <ListItem>
+        {renderText(workload.score)}
+      </ListItem>
+      <ListItem>
+        {renderText(workload.description)}
+      </ListItem>
+    </List>
+  );
+
+  const renderDifficulty = () => (
+    <List>
+      <ListItem>
+        {renderTitle('Difficulty')}
+      </ListItem>
+      <ListItem>
+        {renderText(difficulty.score)}
+      </ListItem>
+      <ListItem>
+        {renderText(difficulty.description)}
+      </ListItem>
+    </List>
+  );
+
+  const renderGrade = () => (
+    <List>
+      <ListItem>
+        {renderTitle('Grade')}
+      </ListItem>
+      <ListItem>
+        {renderText(`Expected: ${expected}`)}
+      </ListItem>
+      <ListItem>
+        {renderText(`Actual: ${actual}`)}
+      </ListItem>
+    </List>
+  );
 
   return (
     <Accordion>
@@ -62,9 +153,26 @@ const ModuleReviewAccordion = ({ module }) => {
         </Grid>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>
-          {overview}
-        </Typography>
+        <List>
+          <ListItem>
+            {renderExtraInfo()}
+          </ListItem>
+          <ListItem>
+            {renderAssessment()}
+          </ListItem>
+          <ListItem>
+            {renderOverview()}
+          </ListItem>
+          <ListItem>
+            {renderWorkload()}
+          </ListItem>
+          <ListItem>
+            {renderDifficulty()}
+          </ListItem>
+          <ListItem>
+            {renderGrade()}
+          </ListItem>
+        </List>
       </AccordionDetails>
     </Accordion>
   );

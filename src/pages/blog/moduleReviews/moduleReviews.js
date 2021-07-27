@@ -20,30 +20,32 @@ import Y2S2 from './y2s2';
 import './moduleReviews.scss';
 
 const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
+  const LONG_DASH = '\u2014';
+
   const SEMESTER_Y1S1 = {
     name: 'Year 1, Semester 1',
-    description: 'Aug 2019 - Dec 2019',
+    description: `Aug 2019 ${LONG_DASH} Dec 2019`,
     image: ThumbnailY1S1,
     link: '/y1s1',
   };
 
   const SEMESTER_Y1S2 = {
     name: 'Year 1, Semester 2',
-    description: 'Jan 2020 - May 2020',
+    description: `Jan 2020 ${LONG_DASH} May 2020`,
     image: ThumbnailY1S2,
     link: '/y1s2',
   };
 
   const SEMESTER_Y2S1 = {
     name: 'Year 2, Semester 1',
-    description: 'Aug 2020 - Dec 2020',
+    description: `Aug 2020 ${LONG_DASH} Dec 2020`,
     image: ThumbnailY2S1,
     link: '/y2s1',
   };
 
   const SEMESTER_Y2S2 = {
     name: 'Year 1, Semester 1',
-    description: 'Jan 2021 - May 2021',
+    description: `Jan 2021 ${LONG_DASH} May 2021`,
     image: ThumbnailY2S2,
     link: '/y2s2',
   };

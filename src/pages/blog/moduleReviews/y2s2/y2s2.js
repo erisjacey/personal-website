@@ -11,11 +11,23 @@ const Y2S2 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS2105/introduction-to-computer-networks',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Assignments',
+        weightage: '23%',
+      },
+      {
+        component: 'Mock Midterm Exam',
+        weightage: '2%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: '25%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '50%',
       },
     ],
     review: {
@@ -30,8 +42,8 @@ const Y2S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A',
+      actual: 'B+',
     },
   };
 
@@ -41,11 +53,23 @@ const Y2S2 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS2106/introduction-to-operating-systems',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Tutorial Participation',
+        weightage: '5%',
+      },
+      {
+        component: 'Lab Assignments',
+        weightage: '25%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: '20%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '50%',
       },
     ],
     review: {
@@ -60,8 +84,8 @@ const Y2S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A-',
+      actual: 'A-',
     },
   };
 
@@ -71,11 +95,27 @@ const Y2S2 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS2102/database-systems',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Tutorial Participation',
+        weightage: '2%',
+      },
+      {
+        component: 'Assignments',
+        weightage: '10%',
+      },
+      {
+        component: 'Team Project',
+        weightage: '28%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: '20%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '40%',
       },
     ],
     review: {
@@ -90,8 +130,8 @@ const Y2S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A',
+      actual: 'A',
     },
   };
 
@@ -100,12 +140,28 @@ const Y2S2 = () => {
     name: 'General Biology',
     faculty: 'Biological Sciences',
     prereqs: LONG_DASH,
-    hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    hasExam: 'No',
+    link: 'https://nusmods.com/modules/LSM1301/general-biology',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Online Tutorial',
+        weightage: '5%',
+      },
+      {
+        component: 'Assignment (Museum Visit)',
+        weightage: '5%',
+      },
+      {
+        component: 'Lab Assignments',
+        weightage: '40%',
+      },
+      {
+        component: 'E-Exam 1',
+        weightage: '25%',
+      },
+      {
+        component: 'E-Exam 2',
+        weightage: '25%',
       },
     ],
     review: {
@@ -120,8 +176,8 @@ const Y2S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A',
+      actual: 'A-',
     },
   };
 
@@ -131,11 +187,19 @@ const Y2S2 = () => {
     faculty: 'Accounting',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/ACC1701X/accounting-for-decision-makers',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Class Participation',
+        weightage: '20%',
+      },
+      {
+        component: 'Group Project',
+        weightage: '30%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '50%',
       },
     ],
     review: {
@@ -150,8 +214,8 @@ const Y2S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'B',
+      actual: 'C (S/U option exercised)',
     },
   };
 

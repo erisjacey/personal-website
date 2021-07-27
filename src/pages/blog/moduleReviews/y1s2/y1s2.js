@@ -11,11 +11,31 @@ const Y1S2 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS2030/programming-methodology-ii',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Lab Assignments',
+        weightage: '5%',
+      },
+      {
+        component: 'Individual Project',
+        weightage: '15%',
+      },
+      {
+        component: 'Class Participation',
+        weightage: '5%',
+      },
+      {
+        component: 'Practical Assessment #1',
+        weightage: '15%',
+      },
+      {
+        component: 'Practical Assessment #2',
+        weightage: '20%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '40%',
       },
     ],
     review: {
@@ -30,8 +50,8 @@ const Y1S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A-',
+      actual: 'A',
     },
   };
 
@@ -41,11 +61,23 @@ const Y1S2 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS2040S/data-structures-and-algorithms',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Tutorial Participation',
+        weightage: '10%',
+      },
+      {
+        component: 'Problem Sets (Assignments)',
+        weightage: '~35%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: 'unknown%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: 'unknown%',
       },
     ],
     review: {
@@ -60,22 +92,34 @@ const Y1S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A',
+      actual: 'A-',
     },
   };
 
   const MODULE_MA1101R = {
-    code: 'MA1101R',
+    code: 'MA1101R (MA2001)',
     name: 'Linear Algebra I',
     faculty: 'Mathematics',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/MA2001/linear-algebra-i',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Homework Assignments',
+        weightage: '16%',
+      },
+      {
+        component: 'Computer Assignment',
+        weightage: '4%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: '20%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '60%',
       },
     ],
     review: {
@@ -90,8 +134,8 @@ const Y1S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A/A+',
+      actual: 'A',
     },
   };
 
@@ -101,11 +145,27 @@ const Y1S2 = () => {
     faculty: 'Biological Sciences',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/GES1021/natural-heritage-of-singapore',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Group Poster',
+        weightage: '20%',
+      },
+      {
+        component: 'Discussion Form',
+        weightage: '5%',
+      },
+      {
+        component: 'Before & After Survey Participation',
+        weightage: '5%',
+      },
+      {
+        component: 'Online Quiz (MCQ)',
+        weightage: '30%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '60%',
       },
     ],
     review: {
@@ -120,8 +180,8 @@ const Y1S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A-',
+      actual: 'B+ (S/U option exercised)',
     },
   };
 
@@ -130,12 +190,24 @@ const Y1S2 = () => {
     name: 'Asking Questions',
     faculty: 'Office of Sr Dy Pres and Provost',
     prereqs: LONG_DASH,
-    hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    hasExam: 'No',
+    link: 'https://nusmods.com/modules/GEQ1000/asking-questions',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Quizzes (MCQ)',
+        weightage: '36%',
+      },
+      {
+        component: 'Forum Posts',
+        weightage: '14%',
+      },
+      {
+        component: 'Tutorial Attendance/Participation',
+        weightage: '36%',
+      },
+      {
+        component: 'Final Reflection Paper',
+        weightage: '14%',
       },
     ],
     review: {
@@ -150,8 +222,8 @@ const Y1S2 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'CS',
+      actual: 'CS',
     },
   };
 

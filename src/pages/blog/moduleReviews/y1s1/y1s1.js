@@ -69,11 +69,23 @@ const Y1S1 = () => {
     faculty: 'Computing',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/CS1231S/discrete-structures',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Tutorial Attendance',
+        weightage: '5%',
+      },
+      {
+        component: 'Assignments',
+        weightage: '20%',
+      },
+      {
+        component: 'Midterm Exam',
+        weightage: '25%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '50%',
       },
     ],
     review: {
@@ -88,8 +100,8 @@ const Y1S1 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A-',
+      actual: 'A',
     },
   };
 
@@ -99,11 +111,15 @@ const Y1S1 = () => {
     faculty: 'Mathematics',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/MA1521/calculus-for-computing',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Online Test',
+        weightage: '20%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '80%',
       },
     ],
     review: {
@@ -118,8 +134,8 @@ const Y1S1 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A/A+',
+      actual: 'A-',
     },
   };
 
@@ -128,12 +144,12 @@ const Y1S1 = () => {
     name: 'Ethics in Computing',
     faculty: 'Information Systems and Analytics',
     prereqs: LONG_DASH,
-    hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    hasExam: 'No',
+    link: 'https://nusmods.com/modules/IS1103/ethics-in-computing',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Forgot',
+        weightage: 'lol%',
       },
     ],
     review: {
@@ -148,8 +164,8 @@ const Y1S1 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'A',
+      actual: 'A+',
     },
   };
 
@@ -159,11 +175,23 @@ const Y1S1 = () => {
     faculty: 'Office of Sr Dy Pres and Provost',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
-    link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
+    link: 'https://nusmods.com/modules/GER1000H/quantitative-reasoning',
     assessment: [
       {
-        component: '',
-        weightage: '',
+        component: 'Quizzes',
+        weightage: '20%',
+      },
+      {
+        component: 'Tutorial Participation',
+        weightage: '10%',
+      },
+      {
+        component: 'Group Project',
+        weightage: '35%',
+      },
+      {
+        component: 'Final Exam',
+        weightage: '35%',
       },
     ],
     review: {
@@ -178,8 +206,8 @@ const Y1S1 = () => {
       },
     },
     grades: {
-      expected: '',
-      actual: '',
+      expected: 'B+',
+      actual: 'B (S/U option exercised)',
     },
   };
 
