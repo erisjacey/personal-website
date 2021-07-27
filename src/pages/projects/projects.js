@@ -82,7 +82,7 @@ const Projects = ({ path }) => {
           component={
             () => renderProject(
               PROJECT_DAILY_CAKEY_BOT.name,
-              PROJECT_DAILY_CAKEY_BOT.description,
+              `${PROJECT_DAILY_CAKEY_BOT.description}.`,
               DailyCakeyBot,
             )
           }
@@ -92,7 +92,7 @@ const Projects = ({ path }) => {
           component={
             () => renderProject(
               PROJECT_PERSONAL_WEBSITE.name,
-              PROJECT_PERSONAL_WEBSITE.description,
+              `${PROJECT_PERSONAL_WEBSITE.description}.`,
               PersonalWebsite,
             )
           }

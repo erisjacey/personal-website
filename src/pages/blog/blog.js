@@ -4,7 +4,7 @@ import './blog.scss';
 
 const Blog = () => {
   const PAGE_NAME = 'Blog';
-  const PAGE_SUB_HEADER = 'This is the Blog page which is still a WIP. Stay tuned!';
+  const PAGE_SUB_HEADER = 'Documentation of my hobbies, interests and miscellaneous topics.';
   return (
     <div>
       <PageHeader name={PAGE_NAME} subHeader={PAGE_SUB_HEADER} />
