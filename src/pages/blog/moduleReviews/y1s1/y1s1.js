@@ -3,7 +3,7 @@ import ModuleReviewAccordion from 'myBlogComponents/moduleReviewAccordion';
 import './y1s1.scss';
 
 const Y1S1 = () => {
-  const LONG_DASH = '\u2014'
+  const LONG_DASH = '\u2014';
 
   const MODULE_CS1101S = {
     code: 'CS1101S',
@@ -96,7 +96,7 @@ const Y1S1 = () => {
   const MODULE_MA1521 = {
     code: 'MA1521',
     name: 'Calculus for Computing',
-    faculty: 'Computing',
+    faculty: 'Mathematics',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
@@ -126,7 +126,7 @@ const Y1S1 = () => {
   const MODULE_IS1103 = {
     code: 'IS1103',
     name: 'Ethics in Computing',
-    faculty: 'Computing',
+    faculty: 'Information Systems and Analytics',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
@@ -156,7 +156,7 @@ const Y1S1 = () => {
   const MODULE_GER1000H = {
     code: 'GER1000H',
     name: 'Quantitative Reasoning',
-    faculty: 'Computing',
+    faculty: 'Office of Sr Dy Pres and Provost',
     prereqs: LONG_DASH,
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS1101S/programming-methodology',
