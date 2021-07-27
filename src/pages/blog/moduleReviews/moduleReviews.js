@@ -44,7 +44,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
   };
 
   const SEMESTER_Y2S2 = {
-    name: 'Year 1, Semester 1',
+    name: 'Year 2, Semester 2',
     description: `Jan 2021 ${LONG_DASH} May 2021`,
     image: ThumbnailY2S2,
     link: '/y2s2',
