@@ -78,7 +78,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
   );
 
   const renderModuleReviewsPage = () => (
-    <div className="module-reviews">
+    <div>
       <PageHeader name={pageName} subHeader={pageSubHeader} />
       {renderSemesterCards()}
     </div>
@@ -87,7 +87,9 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
   const renderSemesterPage = (name, subHeader, Component) => (
     <div>
       <PageHeader name={name} subHeader={subHeader} />
-      <Component />
+      <div className="module-reviews__accordions">
+        <Component />
+      </div>
     </div>
   );
 

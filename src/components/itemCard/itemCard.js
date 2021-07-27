@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     height: '40px',
-    direction: 'flex',
+    display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
