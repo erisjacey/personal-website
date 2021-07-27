@@ -43,21 +43,23 @@ const ProjectCard = ({
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={name}
-          image={image}
-          title={name}
-          className={classes.image}
-        />
-        <CardContent className={classes.content}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {name}
-          </Typography>
-          <Typography variant="body2" color="secondaryDark" component="p">
-            {description}
-          </Typography>
-        </CardContent>
+        <Link href={link} color="textPrimary">
+          <CardMedia
+            component="img"
+            alt={name}
+            image={image}
+            title={name}
+            className={classes.image}
+          />
+          <CardContent className={classes.content}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {name}
+            </Typography>
+            <Typography variant="body2" color="secondaryDark" component="p">
+              {description}
+            </Typography>
+          </CardContent>
+        </Link>
       </CardActionArea>
       <CardActions className={classes.button}>
         <Button size="small" color="secondaryDark" href={link} className={classes.button.left}>
