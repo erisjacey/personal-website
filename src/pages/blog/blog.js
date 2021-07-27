@@ -56,14 +56,14 @@ const Blog = ({ path }) => {
       alignItems="center"
       spacing={3}
     >
-      {BLOG.map((project) => (
+      {BLOG.map((blog) => (
         <Grid item>
           <BlogCard
-            name={project.name}
-            image={project.image}
-            description={project.description}
-            link={`${path}${project.link}`}
-            github={project.github}
+            name={blog.name}
+            image={blog.image}
+            description={blog.description}
+            link={`${path}${blog.link}`}
+            github={blog.github}
           />
         </Grid>
       ))}
@@ -90,33 +90,33 @@ const Blog = ({ path }) => {
         <Route exact path={path} component={renderBlogPage} />
         <Route
           path={`${path}${BLOG_SCUBA_DIVING.link}`}
-          component={
-            () => renderBlog(
-              BLOG_SCUBA_DIVING.name,
-              `${BLOG_SCUBA_DIVING.description}.`,
-              ScubaDiving,
-            )
-          }
+          component={() => (
+            <ScubaDiving
+              path={`${path}${BLOG_SCUBA_DIVING.link}`}
+              pageName={BLOG_SCUBA_DIVING.name}
+              pageSubHeader={`${BLOG_SCUBA_DIVING.description}.`}
+            />
+          )}
         />
         <Route
           path={`${path}${BLOG_TRAVEL.link}`}
-          component={
-            () => renderBlog(
-              BLOG_TRAVEL.name,
-              `${BLOG_TRAVEL.description}.`,
-              Travel,
-            )
-          }
+          component={() => (
+            <Travel
+              path={`${path}${BLOG_TRAVEL.link}`}
+              pageName={BLOG_TRAVEL.name}
+              pageSubHeader={`${BLOG_TRAVEL.description}.`}
+            />
+          )}
         />
         <Route
           path={`${path}${BLOG_MODULE_REVIEWS.link}`}
-          component={
-            () => renderBlog(
-              BLOG_MODULE_REVIEWS.name,
-              `${BLOG_MODULE_REVIEWS.description}.`,
-              ModuleReviews,
-            )
-          }
+          component={() => (
+            <ModuleReviews
+              path={`${path}${BLOG_MODULE_REVIEWS.link}`}
+              pageName={BLOG_MODULE_REVIEWS.name}
+              pageSubHeader={`${BLOG_MODULE_REVIEWS.description}.`}
+            />
+          )}
         />
       </Switch>
     </div>
