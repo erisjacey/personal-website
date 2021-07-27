@@ -9,7 +9,7 @@ const Y2S2 = () => {
     code: 'CS2105',
     name: 'Introduction to Computer Networks',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS2040',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2105/introduction-to-computer-networks',
     assessment: [
@@ -51,7 +51,7 @@ const Y2S2 = () => {
     code: 'CS2106',
     name: 'Introduction to Operating Systems',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS2100',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2106/introduction-to-operating-systems',
     assessment: [
@@ -93,7 +93,7 @@ const Y2S2 = () => {
     code: 'CS2102',
     name: 'Database Systems',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS2030/CS2040, CS1231',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2102/database-systems',
     assessment: [

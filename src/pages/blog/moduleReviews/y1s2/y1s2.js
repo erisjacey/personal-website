@@ -9,7 +9,7 @@ const Y1S2 = () => {
     code: 'CS2030',
     name: 'Programming Methodology II',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS1010',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2030/programming-methodology-ii',
     assessment: [
@@ -59,7 +59,7 @@ const Y1S2 = () => {
     code: 'CS2040S',
     name: 'Data Structures and Algorithms',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS1231, CS1010',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2040S/data-structures-and-algorithms',
     assessment: [

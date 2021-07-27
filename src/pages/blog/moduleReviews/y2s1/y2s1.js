@@ -9,7 +9,7 @@ const Y2S1 = () => {
     code: 'CS2103T',
     name: 'Software Engineering',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS2030, CS2040',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2103T/software-engineering',
     assessment: [
@@ -51,7 +51,7 @@ const Y2S1 = () => {
     code: 'CS2100',
     name: 'Computer Organisation',
     faculty: 'Computing',
-    prereqs: LONG_DASH,
+    prereqs: 'CS1010',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/CS2100/computer-organisation',
     assessment: [
@@ -97,7 +97,7 @@ const Y2S1 = () => {
     code: 'ST2334',
     name: 'Probability and Statistics',
     faculty: 'Statistics and Data Science',
-    prereqs: LONG_DASH,
+    prereqs: 'MA1521',
     hasExam: 'Yes',
     link: 'https://nusmods.com/modules/ST2334/probability-and-statistics',
     assessment: [
