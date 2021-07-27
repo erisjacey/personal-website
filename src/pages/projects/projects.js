@@ -59,13 +59,44 @@ const Projects = ({ path }) => {
     </Grid>
   );
 
-  return (
+  const renderProjectsPage = () => (
     <div>
       <PageHeader name={PAGE_NAME} subHeader={PAGE_SUB_HEADER} />
+      {renderProjectCards()}
+    </div>
+  );
+
+  const renderProject = (name, subHeader, Component) => (
+    <div>
+      <PageHeader name={name} subHeader={subHeader} />
+      <Component />
+    </div>
+  );
+
+  return (
+    <div>
       <Switch>
-        <Route exact path={path} component={renderProjectCards} />
-        <Route path={`${path}${PROJECT_DAILY_CAKEY_BOT.link}`} component={DailyCakeyBot} />
-        <Route path={`${path}${PROJECT_PERSONAL_WEBSITE.link}`} component={PersonalWebsite} />
+        <Route exact path={path} component={renderProjectsPage} />
+        <Route
+          path={`${path}${PROJECT_DAILY_CAKEY_BOT.link}`}
+          component={
+            () => renderProject(
+              PROJECT_DAILY_CAKEY_BOT.name,
+              PROJECT_DAILY_CAKEY_BOT.description,
+              DailyCakeyBot,
+            )
+          }
+        />
+        <Route
+          path={`${path}${PROJECT_PERSONAL_WEBSITE.link}`}
+          component={
+            () => renderProject(
+              PROJECT_PERSONAL_WEBSITE.name,
+              PROJECT_PERSONAL_WEBSITE.description,
+              PersonalWebsite,
+            )
+          }
+        />
       </Switch>
     </div>
   );

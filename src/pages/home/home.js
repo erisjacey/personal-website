@@ -3,8 +3,8 @@ import PageHeader from 'myComponents/pageHeader';
 import './home.scss';
 
 const Home = () => {
-  const PAGE_NAME = 'Home';
-  const PAGE_SUB_HEADER = 'Hello world! I am Eris Jacey, a Computer Science undergraduate from the National University of Singapore (NUS).';
+  const PAGE_NAME = 'Hello World';
+  const PAGE_SUB_HEADER = 'I am Eris Jacey, a Computer Science undergraduate from the National University of Singapore (NUS).';
 
   const renderExtender = () => (
     <div>
