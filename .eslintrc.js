@@ -31,6 +31,7 @@ module.exports = {
           ['myComponents', './src/components'],
           ['myBlogComponents', './src/components/blog'],
           ['myProjectsComponents', './src/components/projects'],
+          ['myConstants', './src/constants/'],
           ['myPages', './src/pages'],
           ['myAboutPage', './src/pages/about'],
           ['myBlogPage', './src/pages/blog'],

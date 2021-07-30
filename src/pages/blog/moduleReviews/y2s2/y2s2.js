@@ -1,10 +1,9 @@
 import React from 'react';
+import { LONG_DASH } from 'myConstants';
 import ModuleReviewAccordion from 'myBlogComponents/moduleReviewAccordion';
 import './y2s2.scss';
 
 const Y2S2 = () => {
-  const LONG_DASH = '\u2014';
-
   const MODULE_CS2105 = {
     code: 'CS2105',
     name: 'Introduction to Computer Networks',

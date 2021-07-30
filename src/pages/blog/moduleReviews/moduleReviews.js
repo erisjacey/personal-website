@@ -7,6 +7,7 @@ import {
 import {
   Grid,
 } from '@material-ui/core';
+import { LONG_DASH } from 'myConstants';
 import PageHeader from 'myComponents/pageHeader';
 import ItemCard from 'myComponents/itemCard';
 import ThumbnailY1S1 from 'myBlogAssets/moduleReviews/y1s1_thumbnail.jpeg';
@@ -20,8 +21,6 @@ import Y2S2 from './y2s2';
 import './moduleReviews.scss';
 
 const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
-  const LONG_DASH = '\u2014';
-
   const SEMESTER_Y1S1 = {
     name: 'Year 1, Semester 1',
     description: `Aug 2019 ${LONG_DASH} Dec 2019`,

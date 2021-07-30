@@ -62,6 +62,7 @@ module.exports = {
       myComponents: path.resolve(__dirname, 'src/components/'),
       myBlogComponents: path.resolve(__dirname, 'src/components/blog/'),
       myProjectsComponents: path.resolve(__dirname, 'src/components/projects/'),
+      myConstants: path.resolve(__dirname, 'src/constants/'),
       myAboutPage: path.resolve(__dirname, 'src/pages/about/'),
       myBlogPage: path.resolve(__dirname, 'src/pages/blog/'),
       myContactPage: path.resolve(__dirname, 'src/pages/contact/'),

@@ -1,11 +1,10 @@
 /* eslint-disable no-multi-str */
 import React from 'react';
+import { LONG_DASH } from 'myConstants';
 import ModuleReviewAccordion from 'myBlogComponents/moduleReviewAccordion';
 import './y1s1.scss';
 
 const Y1S1 = () => {
-  const LONG_DASH = '\u2014';
-
   const MODULE_CS1101S = {
     code: 'CS1101S',
     name: 'Programming Methodology',

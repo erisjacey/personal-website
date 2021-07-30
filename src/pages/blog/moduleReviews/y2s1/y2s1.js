@@ -1,10 +1,9 @@
 import React from 'react';
+import { LONG_DASH } from 'myConstants';
 import ModuleReviewAccordion from 'myBlogComponents/moduleReviewAccordion';
 import './y2s1.scss';
 
 const Y2S1 = () => {
-  const LONG_DASH = '\u2014';
-
   const MODULE_CS2103T = {
     code: 'CS2103T',
     name: 'Software Engineering',
