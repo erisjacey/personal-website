@@ -29,6 +29,8 @@ module.exports = {
           ['myBlogAssets', './src/assets/blog'],
           ['myProjectsAssets', './src/assets/projects'],
           ['myComponents', './src/components'],
+          ['myEducationComponents', './src/components/education'],
+          ['myExperienceComponents', './src/components/experience'],
           ['myBlogComponents', './src/components/blog'],
           ['myProjectsComponents', './src/components/projects'],
           ['myConstants', './src/constants/'],
