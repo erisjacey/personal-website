@@ -10,7 +10,8 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import NavBar from 'myComponents/navbar';
 import Footer from 'myComponents/footer';
 import Home from 'myHomePage';
-import About from 'myAboutPage';
+import Education from 'myEducationPage';
+import Experience from 'myExperiencePage';
 import Projects from 'myProjectsPage';
 import Blog from 'myBlogPage';
 import Contact from 'myContactPage';
@@ -54,14 +55,18 @@ const RouteWithComponents = ({
 );
 
 const App = () => {
-  const pages = [
+  const PAGES = [
     {
       path: '/home',
       component: Home,
     },
     {
-      path: '/about',
-      component: About,
+      path: '/education',
+      component: Education,
+    },
+    {
+      path: '/experience',
+      component: Experience,
     },
     {
       path: '/projects',
@@ -86,7 +91,7 @@ const App = () => {
             <Route exact path="/">
               <Redirect to="home" />
             </Route>
-            {pages.map((page) => (
+            {PAGES.map((page) => (
               <RouteWithComponents
                 path={page.path}
                 component={page.component}
