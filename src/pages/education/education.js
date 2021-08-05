@@ -12,6 +12,7 @@ import LogoSQPS from 'myEducationAssets/sqps_logo.jpeg';
 import TranscriptNUS from 'myEducationAssets/nus_transcript.pdf';
 import TranscriptACJC from 'myEducationAssets/acjc_transcript.pdf';
 import TranscriptFHSS from 'myEducationAssets/fhss_transcript.pdf';
+import TranscriptSQPS from 'myEducationAssets/sqps_transcript.pdf';
 import './education.scss';
 
 const Education = () => {
@@ -78,7 +79,7 @@ const Education = () => {
     activities: [
       'Robotics Club 2007-2010',
     ],
-    transcript: 'Transcript',
+    transcript: TranscriptSQPS,
   };
 
   const EDUCATION = [
