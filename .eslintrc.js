@@ -26,6 +26,8 @@ module.exports = {
         map: [
           ['src', './src/'],
           ['myAssets', './src/assets'],
+          ['myEducationAssets', './src/assets/education'],
+          ['myExperienceAssets', './src/assets/experience'],
           ['myBlogAssets', './src/assets/blog'],
           ['myProjectsAssets', './src/assets/projects'],
           ['myComponents', './src/components'],

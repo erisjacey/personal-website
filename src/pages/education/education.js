@@ -5,6 +5,13 @@ import {
 } from '@material-ui/core';
 import { LONG_DASH } from 'myConstants';
 import EducationPaper from 'myEducationComponents/educationPaper';
+import LogoNUS from 'myEducationAssets/nus_logo.png';
+import LogoACJC from 'myEducationAssets/acjc_logo.png';
+import LogoFHSS from 'myEducationAssets/fhss_logo.jpeg';
+import LogoSQPS from 'myEducationAssets/sqps_logo.jpeg';
+import TranscriptNUS from 'myEducationAssets/nus_transcript.pdf';
+import TranscriptACJC from 'myEducationAssets/acjc_transcript.pdf';
+import TranscriptFHSS from 'myEducationAssets/fhss_transcript.pdf';
 import './education.scss';
 
 const Education = () => {
@@ -19,14 +26,14 @@ const Education = () => {
       years: `2019${LONG_DASH}present`,
       grade: 'Current CAP: 4.75/5.0',
     },
-    image: 'Image',
+    image: LogoNUS,
     activities: [
       'NUS Rag & Flag 2019',
       'Computing Club',
       'NUS SoC e-FOP 2020',
       'Conducted CS2030/S & Java Workshop 2020',
     ],
-    transcript: 'Transcript',
+    transcript: TranscriptNUS,
   };
 
   const EDUCATION_JC = {
@@ -37,11 +44,11 @@ const Education = () => {
       years: `2015${LONG_DASH}2016`,
       grade: '5 Distinctions (H2 Physics, H2 Chemistry, H2 Math, H1 Project Work, H1 General Paper)',
     },
-    image: 'Image',
+    image: LogoACJC,
     activities: [
       'ACJC Concert Band 2015',
     ],
-    transcript: 'Transcript',
+    transcript: TranscriptACJC,
   };
 
   const EDUCATION_SEC = {
@@ -52,11 +59,11 @@ const Education = () => {
       years: `2011${LONG_DASH}2014`,
       grade: 'L1R5 Raw: 7, Nett: 5',
     },
-    image: 'Image',
+    image: LogoFHSS,
     activities: [
       'Fuhua Symphonic Military Band 2011-2014, Band Major',
     ],
-    transcript: 'Transcript',
+    transcript: TranscriptFHSS,
   };
 
   const EDUCATION_PRI = {
@@ -67,7 +74,7 @@ const Education = () => {
       years: `2005${LONG_DASH}2010`,
       grade: 'PSLE Score: 243',
     },
-    image: 'Image',
+    image: LogoSQPS,
     activities: [
       'Robotics Club 2007-2010',
     ],

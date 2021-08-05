@@ -1,27 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Grid } from '@material-ui/core';
+import {
+  Paper, Grid, Typography, Button, Link,
+} from '@material-ui/core';
 import './educationPaper.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '300px',
+    minHeight: '300px',
     width: '700px',
+    padding: '2% 0%',
   },
   image: {
-    height: '200px',
-    objectFit: 'cover',
+    height: '180px',
+    width: '180px',
+    objectFit: 'contain',
   },
-  content: {
-    height: '60px',
+  heading: {
+    fontSize: theme.typography.pxToRem(22),
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
+  },
+  secondaryHeading: {
+    fontSize: theme.typography.pxToRem(20),
+    color: theme.palette.text.primary,
+  },
+  sectionText: {
+    fontSize: theme.typography.pxToRem(17),
+    color: theme.palette.text.secondary,
+  },
+  activitiesHeading: {
+    fontSize: theme.typography.pxToRem(17),
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
+  },
+  activitiesText: {
+    fontSize: theme.typography.pxToRem(17),
+    color: theme.palette.text.secondary,
   },
   button: {
-    height: '40px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    fontSize: theme.typography.pxToRem(17),
+    fontWeight: 'bold',
+    color: theme.palette.text.primary,
+    marginTop: '10%',
   },
 }));
 
@@ -35,23 +57,39 @@ const EducationPaper = ({
       item
       container
       direction="row"
-      justifyContent="space-around"
-      alignItems="center"
+      justifyContent="center"
+      alignItems="flex-start"
     >
-      <Grid item xs={6}>{image}</Grid>
+      <Grid item xs={4}>
+        <img
+          src={image}
+          alt={`Logo for ${school.name}`}
+          className={classes.image}
+        />
+      </Grid>
       <Grid
         item
-        xs={6}
+        xs={7}
         container
         direction="column"
         justifyContent="space-around"
         alignItems="center"
       >
-        <Grid item>{type}</Grid>
-        <Grid item>{school.name}</Grid>
-        <Grid item>{school.exam}</Grid>
-        <Grid item>{school.years}</Grid>
-        <Grid item>{school.grade}</Grid>
+        <Grid item>
+          <Typography className={classes.heading}>{type}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={classes.secondaryHeading}>{school.name}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={classes.sectionText}>{school.exam}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={classes.sectionText}>{school.years}</Typography>
+        </Grid>
+        <Grid item>
+          <Typography className={classes.sectionText}>{school.grade}</Typography>
+        </Grid>
       </Grid>
     </Grid>
   );
@@ -61,7 +99,7 @@ const EducationPaper = ({
       item
       container
       direction="column"
-      justifyContent="space-around"
+      justifyContent="flex-end"
       alignItems="center"
     >
       <Grid
@@ -71,12 +109,22 @@ const EducationPaper = ({
         justifyContent="space-around"
         alignItems="center"
       >
-        <Grid item>Activities:</Grid>
+        <Grid item>
+          <Typography className={classes.activitiesHeading}>Activities:</Typography>
+        </Grid>
         {activities.map((activity) => (
-          <Grid item>{activity}</Grid>
+          <Grid item>
+            <Typography className={classes.activitiesText}>{activity}</Typography>
+          </Grid>
         ))}
       </Grid>
-      <Grid item>{transcript}</Grid>
+      <Grid item>
+        <Link href={transcript} target="_blank">
+          <Button size="medium" variant="contained" color="primary" className={classes.button}>
+            Transcript
+          </Button>
+        </Link>
+      </Grid>
     </Grid>
   );
 
@@ -85,7 +133,7 @@ const EducationPaper = ({
       <Grid
         container
         direction="column"
-        justifyContent="space-evenly"
+        justifyContent="space-around"
         alignItems="center"
         className={classes.root}
       >

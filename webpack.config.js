@@ -22,10 +22,13 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|svg|jpe?g|gif|pdf)$/,
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
           },
         ],
       },
@@ -57,6 +60,8 @@ module.exports = {
     alias: {
       src: path.resolve(__dirname, 'src/'),
       myAssets: path.resolve(__dirname, 'src/assets/'),
+      myEducationAssets: path.resolve(__dirname, 'src/assets/education/'),
+      myExperienceAssets: path.resolve(__dirname, 'src/assets/experience/'),
       myBlogAssets: path.resolve(__dirname, 'src/assets/blog/'),
       myProjectsAssets: path.resolve(__dirname, 'src/assets/projects/'),
       myComponents: path.resolve(__dirname, 'src/components/'),

@@ -36,7 +36,7 @@ const ItemCard = ({
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link href={link} color="textPrimary">
+        <Link href={link} hover="none" color="textPrimary">
           <CardMedia
             component="img"
             alt={name}

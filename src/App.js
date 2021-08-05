@@ -20,6 +20,9 @@ import './App.scss';
 const theme = createMuiTheme({
   typography: {
     fontFamily: 'Open Sans',
+    button: {
+      textTransform: 'none',
+    },
   },
   palette: {
     primary: {
