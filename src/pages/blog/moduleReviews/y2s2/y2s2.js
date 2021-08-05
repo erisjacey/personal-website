@@ -1,3 +1,4 @@
+/* eslint-disable no-multi-str */
 import React from 'react';
 import { LONG_DASH } from 'myConstants';
 import ModuleReviewAccordion from 'myBlogComponents/moduleReviewAccordion';
@@ -30,14 +31,27 @@ const Y2S2 = () => {
       },
     ],
     review: {
-      overview: 'Overview',
+      overview: 'This module introduces you to fundamental principles of computer networks, such as \
+                the logical architecture of the internet, as well as various internet protocols. \
+                Topics include the web and web applications, DNS, socket programming, transport layer protocols (UDP/TCP), \
+                network layer protcols, and various topics like network security and multimedia. \
+                My friend described this module as more of a Bio module, and I think it is a pretty accurate description. \
+                The content delivered is not as technical as in a typical CS module, \
+                and is for the most part fairly intuitive.',
       workload: {
-        score: '/10',
-        description: 'Workload',
+        score: '5/10',
+        description: 'This is one of the lighter CS modules in terms of workload. \
+                     There are a few assignments, which are applications of the concepts taught during lectures and \
+                     can take some time to complete, but besides them, you wouldn\'t be spending too much on the module. \
+                     The concepts taught are relatively digestible and shouldn\'t take too long to understand.',
       },
       difficulty: {
-        score: '/10',
-        description: 'Difficulty',
+        score: '6/10',
+        description: 'This module\'s difficulty is directly correlated to its workload, i.e. it\'s not that bad. \
+                     However, because of this, its bell curve is likely steep for a CS module as everyone will generally do well. \
+                     Such modules\' typical grading systems apply here; get just question wrong during the exam \
+                     and you will find yourself dropping a few percentile points down among your peers. \
+                     Feel free to take this module relatively lightly, but do not be like me and underestimate the exams.',
       },
     },
     grades: {
@@ -72,14 +86,29 @@ const Y2S2 = () => {
       },
     ],
     review: {
-      overview: 'Overview',
+      overview: 'Pretty interesting module. This module serves as an introduction to the notion of operating systems, \
+                with a slight emphasis on Linux. \
+                That being said, most of what is taught is generalisable to most modern OS\'s, \
+                even though they are fairly rudimentary (being an introductory module). \
+                Topics include process management (e.g. threads, synchronisation, process scheduling), \
+                memory management (e.g. virtual memory, paging), \
+                and file management (e.g. directories, structure), in that order chronologically.',
       workload: {
-        score: '/10',
-        description: 'Workload',
+        score: '8/10',
+        description: 'The module is fairly content heavy, but the meat of it lies in its lab assignments. \
+                     They can be a nightmare to complete due to the non-deterministic nature of the tasks, \
+                     making them hard to test for correctness (I would imagine they are a nightmare to grade as well). \
+                     For my semester, I was fortunate enough to be allowed to collaborate with a partner to complete the labs together \
+                     and obtain the same grade. Needless to say, I got carried.',
       },
       difficulty: {
-        score: '/10',
-        description: 'Difficulty',
+        score: '9/10',
+        description: 'The concepts were personally not very intuitive and required extra time to understand fully. \
+                     The difficulty curve was not linear, however, meaning that while process management and memory management \
+                     were pretty hard to digest, file management (taught in the last few weeks) were a complete breeze comparatively. \
+                     The labs factor into the difficulty of the module as well. \
+                     Do not treat them lightly and start early, or you might risk not being able to complete them in time, \
+                     especially if you do not have a lab partner to solve them with.',
       },
     },
     grades: {
@@ -118,14 +147,30 @@ const Y2S2 = () => {
       },
     ],
     review: {
-      overview: 'Overview',
+      overview: 'For better or worse, this module is much more than a simple SQL crash course. \
+                It starts with introducing you to the design and theory aspects of databases, \
+                including relational algebra and the entity-relational model. \
+                You then spend several weeks learning actual SQL. \
+                Then in the last few weeks, you learn about schema refinement, with specific focus on \
+                functional dependencies and normal forms (Boyce-Codd and third).',
       workload: {
-        score: '/10',
-        description: 'Workload',
+        score: '10/10',
+        description: 'Deceptively really heavy, solely because of the group project. \
+                     I easily spent the most time on this module this semester. \
+                     While the weekly lectures and tutorials did take some time, \
+                     a significant portion of my effort for this module was spent in the project. \
+                     You are tasked with developing a backend database application, and because a good portion of it is implementation, \
+                     you can only start on it after about the halfway point of the semester when you have been taught SQL, \
+                     meaning there isn\'t much time to do it, even though there is A LOT to do. \
+                     Prepare for at least one sleepless night with your teammates to complete this project. \
+                     Oh and FYI, it apparently used to be way worse when the project had a frontend component as well. \
+                     Go figure.',
       },
       difficulty: {
-        score: '/10',
-        description: 'Difficulty',
+        score: '8/10',
+        description: 'A solid foundation in set theory (from discrete math) would go a long way in acing this module. \
+                     SQL query questions were interesting and useful (for future database-related positions) but can be very challenging at the same time. \
+                     And you need to implement a whopping 30 (!!!) SQL functions for the project, in addition to a bunch of other tasks you need to complete.',
       },
     },
     grades: {
@@ -164,14 +209,24 @@ const Y2S2 = () => {
       },
     ],
     review: {
-      overview: 'Overview',
+      overview: 'This is supposed to double as a bridging module for Life Science majors/minors, but other majors (like CS and DSA) \
+                opt to take it to fulfill their science module requirements as well, so expect some variety in the cohort. \
+                As someone whose favourite subject in secondary school was Biology, this module was simply a joy. \
+                The first half covers macrobiology concepts like evolution, biodiversity, ecology, plants and animals, while \
+                the second half covers microbiology concepts like the energy/chemistry of life, cell structure/function, DNA and gene expression.',
       workload: {
-        score: '/10',
-        description: 'Workload',
+        score: '6/10',
+        description: 'The content is plentiful (being a Biology module) but the depth of each topic isn\'t too overwhelming. \
+                     I would suggest attending each weekly lecture (either live or through a webcast) at the very minimum. \
+                     The labs (conducted face-to-face when I took the module) were the funnest parts of the module. \
+                     There was also a museum visit component, where we were tasked with heading to Lee Kong Chian (LKC) Natural History Museum \
+                     (basically the museum at NUS) and answer a bunch of questions using information found in the museum in the style of a treasure hunt, so that was fun.',
       },
       difficulty: {
-        score: '/10',
-        description: 'Difficulty',
+        score: '4/10',
+        description: 'Not very difficult, especially if you have taken a Biology class before (secondary school/H1 in JC or something), \
+                     but even if you haven\'t, you probably just need to spend a little more time to familiarise yourself with the concepts. \
+                     Because of the "easy-ness" of the concepts and by extension the exams, however, expect the competition to be stiff.',
       },
     },
     grades: {
@@ -202,14 +257,14 @@ const Y2S2 = () => {
       },
     ],
     review: {
-      overview: 'Overview',
+      overview: 'In my completely absolutely 100% for-sure unbiased opinion, I never want to take another business module ever again.',
       workload: {
-        score: '/10',
-        description: 'Workload',
+        score: '?/10',
+        description: 'Not sure because I spent like 0 effort here.',
       },
       difficulty: {
-        score: '/10',
-        description: 'Difficulty',
+        score: '?/10',
+        description: 'Shouldn\'t be too bad if you care about the module. I didn\'t though.',
       },
     },
     grades: {
