@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Paper, Grid, Typography, Button, Link,
+  Paper, Grid, Typography, Button, Link, Chip,
 } from '@material-ui/core';
-import './educationPaper.scss';
+import './experiencePaper.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,12 +30,15 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(17),
     color: theme.palette.text.secondary,
   },
-  activitiesHeading: {
+  chip: {
+    margin: '1% 1%',
+  },
+  descriptionHeading: {
     fontSize: theme.typography.pxToRem(17),
     fontWeight: 'bold',
     color: theme.palette.text.primary,
   },
-  activitiesText: {
+  descriptionText: {
     fontSize: theme.typography.pxToRem(17),
     color: theme.palette.text.secondary,
   },
@@ -46,8 +49,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EducationPaper = ({
-  type, school, image, activities, transcript,
+const ExperiencePaper = ({
+  name, role, duration, image, skills, description, link,
 }) => {
   const classes = useStyles();
 
@@ -62,7 +65,7 @@ const EducationPaper = ({
       <Grid item xs={4}>
         <img
           src={image}
-          alt={`Logo for ${school.name}`}
+          alt={`Logo for ${name}`}
           className={classes.image}
         />
       </Grid>
@@ -75,19 +78,23 @@ const EducationPaper = ({
         alignItems="center"
       >
         <Grid item>
-          <Typography className={classes.heading}>{type}</Typography>
+          <Typography className={classes.heading}>{role}</Typography>
         </Grid>
         <Grid item>
-          <Typography className={classes.secondaryHeading}>{school.name}</Typography>
+          <Typography className={classes.secondaryHeading}>{name}</Typography>
         </Grid>
         <Grid item>
-          <Typography className={classes.sectionText}>{school.exam}</Typography>
+          <Typography className={classes.sectionText}>{duration}</Typography>
         </Grid>
-        <Grid item>
-          <Typography className={classes.sectionText}>{school.years}</Typography>
-        </Grid>
-        <Grid item>
-          <Typography className={classes.sectionText}>{school.grade}</Typography>
+        <Grid item style={{ width: '100%' }}>
+          {skills.map((skill) => (
+            <Chip
+              size="small"
+              label={skill}
+              color="primary"
+              className={classes.chip}
+            />
+          ))}
         </Grid>
       </Grid>
     </Grid>
@@ -109,18 +116,18 @@ const EducationPaper = ({
         alignItems="center"
       >
         <Grid item>
-          <Typography className={classes.activitiesHeading}>Activities:</Typography>
+          <Typography className={classes.descriptionHeading}>Description:</Typography>
         </Grid>
-        {activities.map((activity) => (
+        {description.map((desc) => (
           <Grid item>
-            <Typography className={classes.activitiesText}>{activity}</Typography>
+            <Typography className={classes.descriptionText}>{desc}</Typography>
           </Grid>
         ))}
       </Grid>
       <Grid item>
-        <Link href={transcript} target="_blank">
+        <Link href={link.url} target="_blank">
           <Button size="medium" variant="contained" color="primary" className={classes.button}>
-            Transcript
+            {link.name}
           </Button>
         </Link>
       </Grid>
@@ -143,17 +150,17 @@ const EducationPaper = ({
   );
 };
 
-EducationPaper.propTypes = {
-  type: PropTypes.string.isRequired,
-  school: PropTypes.shape({
-    name: PropTypes.string,
-    exam: PropTypes.string,
-    years: PropTypes.string,
-    grade: PropTypes.string,
-  }).isRequired,
+ExperiencePaper.propTypes = {
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  duration: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  activities: PropTypes.arrayOf(PropTypes.string).isRequired,
-  transcript: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  description: PropTypes.arrayOf(PropTypes.string).isRequired,
+  link: PropTypes.shape({
+    url: PropTypes.string,
+    name: PropTypes.string,
+  }).isRequired,
 };
 
-export default EducationPaper;
+export default ExperiencePaper;
