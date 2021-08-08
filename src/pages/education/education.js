@@ -29,9 +29,9 @@ const Education = () => {
     },
     image: LogoNUS,
     activities: [
-      'NUS Rag & Flag 2019',
+      `NUS Rag & Flag 2019 ${LONG_DASH} Dancer`,
       'Computing Club',
-      'NUS SoC e-FOP 2020',
+      `NUS SoC e-FOP 2020 ${LONG_DASH} OGL`,
       'Conducted CS2030/S & Java Workshop 2020',
     ],
     transcript: TranscriptNUS,

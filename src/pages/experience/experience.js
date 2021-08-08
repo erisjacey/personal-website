@@ -50,7 +50,7 @@ const Experience = () => {
 
   const EXPERIENCE_TA_AY2021S1_CS1101S = {
     name: 'National University of Singapore',
-    role: 'Teaching Assistant (CS1101S)',
+    role: `Teaching Assistant ${LONG_DASH} CS1101S Programming Methodology`,
     duration: `Aug 2020${LONG_DASH}Dec 2020`,
     image: LogoNUS,
     skills: [
@@ -70,7 +70,7 @@ const Experience = () => {
 
   const EXPERIENCE_TA_AY2021S2_CS2030S = {
     name: 'National University of Singapore',
-    role: 'Teaching Assistant (CS2030S)',
+    role: `Teaching Assistant ${LONG_DASH} CS2030S Programming Methodology II`,
     duration: `Jan 2021${LONG_DASH}Apr 2021`,
     image: LogoNUS,
     skills: [
