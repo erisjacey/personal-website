@@ -26,6 +26,7 @@ const Blog = ({ path }) => {
     description: 'The best hobby ever',
     image: ThumbnailScubaDiving,
     link: '/scuba-diving',
+    component: ScubaDiving,
   };
 
   const BLOG_TRAVEL = {
@@ -33,6 +34,7 @@ const Blog = ({ path }) => {
     description: 'Photographs, videos and recounts',
     image: ThumbnailTravel,
     link: '/travel',
+    component: Travel,
   };
 
   const BLOG_MODULE_REVIEWS = {
@@ -40,6 +42,7 @@ const Blog = ({ path }) => {
     description: 'A collection of the reviews of the modules I completed in university',
     image: ThumbnailModuleReviews,
     link: '/module-reviews',
+    component: ModuleReviews,
   };
 
   const BLOG = [
@@ -77,47 +80,22 @@ const Blog = ({ path }) => {
     </div>
   );
 
-  const renderBlog = (name, subHeader, Component) => (
-    <div>
-      <PageHeader name={name} subHeader={subHeader} />
-      <Component />
-    </div>
-  );
-
   return (
     <div>
       <Switch>
         <Route exact path={path} component={renderBlogPage} />
-        <Route
-          path={`${path}${BLOG_SCUBA_DIVING.link}`}
-          component={() => (
-            <ScubaDiving
-              path={`${path}${BLOG_SCUBA_DIVING.link}`}
-              pageName={BLOG_SCUBA_DIVING.name}
-              pageSubHeader={`${BLOG_SCUBA_DIVING.description}.`}
-            />
-          )}
-        />
-        <Route
-          path={`${path}${BLOG_TRAVEL.link}`}
-          component={() => (
-            <Travel
-              path={`${path}${BLOG_TRAVEL.link}`}
-              pageName={BLOG_TRAVEL.name}
-              pageSubHeader={`${BLOG_TRAVEL.description}.`}
-            />
-          )}
-        />
-        <Route
-          path={`${path}${BLOG_MODULE_REVIEWS.link}`}
-          component={() => (
-            <ModuleReviews
-              path={`${path}${BLOG_MODULE_REVIEWS.link}`}
-              pageName={BLOG_MODULE_REVIEWS.name}
-              pageSubHeader={`${BLOG_MODULE_REVIEWS.description}.`}
-            />
-          )}
-        />
+        {BLOG.map((blog) => (
+          <Route
+            path={`${path}${blog.link}`}
+            component={() => (
+              <blog.component
+                path={`${path}${blog.link}`}
+                pageName={blog.name}
+                pageSubHeader={`${blog.description}.`}
+              />
+            )}
+          />
+        ))}
       </Switch>
     </div>
   );

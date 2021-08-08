@@ -26,6 +26,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     description: `Aug 2019 ${LONG_DASH} Dec 2019`,
     image: ThumbnailY1S1,
     link: '/y1s1',
+    component: Y1S1,
   };
 
   const SEMESTER_Y1S2 = {
@@ -33,6 +34,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     description: `Jan 2020 ${LONG_DASH} May 2020`,
     image: ThumbnailY1S2,
     link: '/y1s2',
+    component: Y1S2,
   };
 
   const SEMESTER_Y2S1 = {
@@ -40,6 +42,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     description: `Aug 2020 ${LONG_DASH} Dec 2020`,
     image: ThumbnailY2S1,
     link: '/y2s1',
+    component: Y2S1,
   };
 
   const SEMESTER_Y2S2 = {
@@ -47,6 +50,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     description: `Jan 2021 ${LONG_DASH} May 2021`,
     image: ThumbnailY2S2,
     link: '/y2s2',
+    component: Y2S2,
   };
 
   const SEMESTERS = [
@@ -98,46 +102,18 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     <div>
       <Switch>
         <Route exact path={path} component={renderModuleReviewsPage} />
-        <Route
-          path={`${path}${SEMESTER_Y1S1.link}`}
-          component={
-            () => renderSemesterPage(
-              `${pageName} for ${SEMESTER_Y1S1.name}`,
-              `${SEMESTER_Y1S1.description}.`,
-              Y1S1,
-            )
-          }
-        />
-        <Route
-          path={`${path}${SEMESTER_Y1S2.link}`}
-          component={
-            () => renderSemesterPage(
-              `${pageName} for ${SEMESTER_Y1S2.name}`,
-              `${SEMESTER_Y1S2.description}.`,
-              Y1S2,
-            )
-          }
-        />
-        <Route
-          path={`${path}${SEMESTER_Y2S1.link}`}
-          component={
-            () => renderSemesterPage(
-              `${pageName} for ${SEMESTER_Y2S1.name}`,
-              `${SEMESTER_Y2S1.description}.`,
-              Y2S1,
-            )
-          }
-        />
-        <Route
-          path={`${path}${SEMESTER_Y2S2.link}`}
-          component={
-            () => renderSemesterPage(
-              `${pageName} for ${SEMESTER_Y2S2.name}`,
-              `${SEMESTER_Y2S2.description}.`,
-              Y2S2,
-            )
-          }
-        />
+        {SEMESTERS.map((semester) => (
+          <Route
+            path={`${path}${semester.link}`}
+            component={
+              () => renderSemesterPage(
+                `${pageName} for ${semester.name}`,
+                semester.description,
+                semester.component,
+              )
+            }
+          />
+        ))}
       </Switch>
     </div>
   );

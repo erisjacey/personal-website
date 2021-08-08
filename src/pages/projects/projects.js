@@ -25,6 +25,7 @@ const Projects = ({ path }) => {
     image: ThumbnailDailyCakeyBot,
     link: '/daily-cakey-bot',
     github: 'https://github.com/erisjacey/daily-cakey-bot',
+    component: DailyCakeyBot,
   };
 
   const PROJECT_PERSONAL_WEBSITE = {
@@ -33,6 +34,7 @@ const Projects = ({ path }) => {
     image: ThumbnailPersonalWebsite,
     link: '/personal-website',
     github: 'https://github.com/erisjacey/personal-website',
+    component: PersonalWebsite,
   };
 
   const PROJECTS = [
@@ -80,26 +82,18 @@ const Projects = ({ path }) => {
     <div>
       <Switch>
         <Route exact path={path} component={renderProjectsPage} />
-        <Route
-          path={`${path}${PROJECT_DAILY_CAKEY_BOT.link}`}
-          component={
-            () => renderProject(
-              PROJECT_DAILY_CAKEY_BOT.name,
-              `${PROJECT_DAILY_CAKEY_BOT.description}.`,
-              DailyCakeyBot,
-            )
-          }
-        />
-        <Route
-          path={`${path}${PROJECT_PERSONAL_WEBSITE.link}`}
-          component={
-            () => renderProject(
-              PROJECT_PERSONAL_WEBSITE.name,
-              `${PROJECT_PERSONAL_WEBSITE.description}.`,
-              PersonalWebsite,
-            )
-          }
-        />
+        {PROJECTS.map((project) => (
+          <Route
+            path={`${path}${project.link}`}
+            component={
+              () => renderProject(
+                project.name,
+                `${project.description}.`,
+                project.component,
+              )
+            }
+          />
+        ))}
       </Switch>
     </div>
   );
