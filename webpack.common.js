@@ -10,11 +10,6 @@ module.exports = {
     filename: 'main.js',
     publicPath: '/',
   },
-  devServer: {
-    historyApiFallback: true,
-    contentBase: './build',
-  },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
