@@ -1,7 +1,7 @@
 import { SET_CURRENT_LINK, APPEND_LINK } from '../actionTypes';
 
 const initialState = {
-  currentLink: '',
+  currentLink: '/home',
 };
 
 const currentLinkReducer = (state = initialState, action) => {
