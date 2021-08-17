@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   Container, Navbar, Nav, NavDropdown,
 } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Grid, Avatar, Typography, Link,
 } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
-import ProfilePic from 'myAssets/my-personal-picture_square.jpg';
 import './navbar.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const { currentLink } = useSelector((state) => state.currentLink);
 
   return (
     <Navbar bg="primary3" expand="lg" sticky="top" variant="dark">
@@ -40,12 +43,16 @@ const NavBar = () => {
           </div>
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav justify>
-            <Nav.Link className="navbar__link" href="/education">Education</Nav.Link>
-            <Nav.Link className="navbar__link" href="/experience">Experience</Nav.Link>
-            <Nav.Link className="navbar__link" href="/blog">Blog</Nav.Link>
-            <Nav.Link className="navbar__link" href="/projects">Projects</Nav.Link>
-            <Nav.Link className="navbar__link" href="/contact">Contact</Nav.Link>
+          <Nav
+            justify
+            activeKey={currentLink}
+            onSelect={(selectedKey) => dispatch(setCurrentLink(selectedKey))}
+          >
+            <Nav.Link className="navbar__link" href="/education" eventKey="/education">Education</Nav.Link>
+            <Nav.Link className="navbar__link" href="/experience" eventKey="/experience">Experience</Nav.Link>
+            <Nav.Link className="navbar__link" href="/blog" eventKey="/blog">Blog</Nav.Link>
+            <Nav.Link className="navbar__link" href="/projects" eventKey="/projects">Projects</Nav.Link>
+            <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

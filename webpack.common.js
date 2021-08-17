@@ -71,6 +71,7 @@ module.exports = {
       myContactPage: path.resolve(__dirname, 'src/pages/contact/'),
       myHomePage: path.resolve(__dirname, 'src/pages/home/'),
       myProjectsPage: path.resolve(__dirname, 'src/pages/projects/'),
+      myRedux: path.resolve(__dirname, 'src/redux/'),
     },
   },
 };

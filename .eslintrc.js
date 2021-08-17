@@ -43,6 +43,7 @@ module.exports = {
           ['myContactPage', './src/pages/contact'],
           ['myHomePage', './src/pages/home'],
           ['myProjectsPage', './src/pages/projects'],
+          ['myRedux', './src/redux'],
         ],
         extensions: ['.ts', '.js', '.jsx', '.json'],
       },
