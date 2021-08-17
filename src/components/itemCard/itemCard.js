@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
   content: {
     height: '110px',
   },
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+      color: '#2b7a78',
+    },
+  },
   button: {
     height: '40px',
     display: 'flex',
@@ -46,6 +52,7 @@ const ItemCard = ({
           onClick={() => {
             dispatch(setCurrentLink(link));
           }}
+          className={classes.link}
         >
           <CardMedia
             component="img"
@@ -72,6 +79,7 @@ const ItemCard = ({
           onClick={() => {
             dispatch(setCurrentLink(link));
           }}
+          className={classes.link}
         >
           See More
         </Button>
