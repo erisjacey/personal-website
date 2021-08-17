@@ -42,10 +42,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(17),
     color: theme.palette.text.secondary,
   },
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  },
   button: {
     fontSize: theme.typography.pxToRem(17),
     fontWeight: 'bold',
     marginTop: '10%',
+    '&:hover': {
+      backgroundColor: '#3aafa9',
+      color: '#feffff',
+    },
   },
 }));
 
@@ -125,7 +134,7 @@ const ExperiencePaper = ({
         ))}
       </Grid>
       <Grid item>
-        <Link href={link.url} target="_blank">
+        <Link href={link.url} target="_blank" className={classes.link}>
           <Button size="medium" variant="contained" color="primary" className={classes.button}>
             {link.name}
           </Button>

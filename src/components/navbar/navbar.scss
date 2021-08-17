@@ -12,4 +12,30 @@
     font-size: 18px;
     font-weight: 500;
   }
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    color: rgb(219, 231, 240);
+
+    &__separator {
+      color: rgb(219, 231, 240);
+    }
+
+    &__link {
+      color: rgb(219, 231, 240);
+      font-size: 18px;
+      font-weight: 500;
+      &:hover {
+        color: white;
+        text-decoration: none;
+      }
+    }
+
+    &__text {
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
 }

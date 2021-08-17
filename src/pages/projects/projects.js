@@ -53,6 +53,7 @@ const Projects = ({ path }) => {
       {PROJECTS.map((project) => (
         <Grid item>
           <ProjectCard
+            key={project.name}
             name={project.name}
             image={project.image}
             description={project.description}
@@ -84,6 +85,7 @@ const Projects = ({ path }) => {
         <Route exact path={path} component={renderProjectsPage} />
         {PROJECTS.map((project) => (
           <Route
+            key={project.name}
             path={`${path}${project.link}`}
             component={
               () => renderProject(

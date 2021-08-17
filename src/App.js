@@ -22,16 +22,20 @@ const theme = createMuiTheme({
     fontFamily: 'Open Sans',
     button: {
       textTransform: 'none',
+      '&:hover': {
+        backgroundColor: '#3aafa9',
+        color: '#feffff',
+      },
     },
   },
   palette: {
     primary: {
-      light: '#feffff;',
+      light: '#feffff',
       main: '#def2f1',
       dark: '#17252a',
     },
     secondary: {
-      light: '#feffff;',
+      light: '#feffff',
       main: '#3aafa9',
       dark: '#2b7a78',
     },
@@ -96,6 +100,7 @@ const App = () => {
             </Route>
             {PAGES.map((page) => (
               <RouteWithComponents
+                key={page.path}
                 path={page.path}
                 component={page.component}
               />

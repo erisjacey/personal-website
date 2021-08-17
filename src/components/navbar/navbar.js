@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  Container, Navbar, Nav, NavDropdown,
+  Container, Navbar, Nav, NavDropdown, Breadcrumb,
 } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Grid, Avatar, Typography, Link,
+  Grid, Avatar, Typography, Link, Breadcrumbs,
 } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
 import './navbar.scss';
@@ -34,10 +34,53 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const { currentLink } = useSelector((state) => state.currentLink);
 
+  const getBaseLink = () => `/${currentLink.split('/')[1]}`;
+
+  const getBreadcrumbLinks = () => {
+    const breadcrumbs = currentLink.split('/').slice(1); // array of strings
+    const breadcrumbLinks = [];
+    for (let i = 0; i < breadcrumbs.length; i += 1) {
+      let link = '';
+      for (let j = 0; j <= i; j += 1) {
+        link += `/${breadcrumbs[j]}`;
+      }
+      breadcrumbLinks.push({
+        name: breadcrumbs[i],
+        link,
+      });
+    }
+    return breadcrumbLinks;
+  };
+
+  const renderBreadcrumbs = () => {
+    const breadcrumbLinks = getBreadcrumbLinks();
+    return (
+      <Breadcrumbs
+        separator={<div className="navbar__breadcrumbs__separator">/</div>}
+        aria-label="breadcrumb"
+        className="navbar__breadcrumbs"
+      >
+        {breadcrumbLinks.map((breadcrumb, index) => (index !== breadcrumbLinks.length - 1
+          ? (
+            <Link
+              href={breadcrumb.link}
+              onClick={() => dispatch(setCurrentLink(breadcrumb.link))}
+              className="navbar__breadcrumbs__link"
+            >
+              {breadcrumb.name}
+            </Link>
+          )
+          : (
+            <div className="navbar__breadcrumbs__text">{breadcrumb.name}</div>
+          )))}
+      </Breadcrumbs>
+    );
+  };
+
   return (
     <Navbar bg="primary3" expand="lg" sticky="top" variant="dark">
       <Container>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/home" onClick={() => dispatch(setCurrentLink('/home'))}>
           <div className="navbar__brand">
             Eris Jacey
           </div>
@@ -45,7 +88,7 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav
             justify
-            activeKey={currentLink}
+            activeKey={getBaseLink()}
             onSelect={(selectedKey) => dispatch(setCurrentLink(selectedKey))}
           >
             <Nav.Link className="navbar__link" href="/education" eventKey="/education">Education</Nav.Link>
@@ -55,6 +98,7 @@ const NavBar = () => {
             <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        {renderBreadcrumbs()}
       </Container>
     </Navbar>
   );

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Card, CardActionArea, CardActions, CardContent, CardMedia,
@@ -12,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '300px',
     width: '700px',
+  },
+  link: {
+    '&:hover': {
+      color: '#2b7a78',
+    },
   },
   image: {
     height: '200px',
@@ -29,15 +36,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ProjectCard = ({
+const BlogCard = ({
   name, image, link,
 }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link href={link} underline="none" color="textPrimary">
+        <Link
+          href={link}
+          underline="none"
+          color="textPrimary"
+          className={classes.link}
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
+        >
           <CardMedia
             component="img"
             alt={name}
@@ -53,7 +69,15 @@ const ProjectCard = ({
         </Link>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" color="secondaryDark" href={link}>
+        <Button
+          size="small"
+          color="textPrimary"
+          href={link}
+          className={classes.link}
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
+        >
           See More
         </Button>
       </CardActions>
@@ -61,10 +85,10 @@ const ProjectCard = ({
   );
 };
 
-ProjectCard.propTypes = {
+BlogCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };
 
-export default ProjectCard;
+export default BlogCard;

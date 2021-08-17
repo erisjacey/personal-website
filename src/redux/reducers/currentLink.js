@@ -1,4 +1,4 @@
-import { SET_CURRENT_LINK } from '../actionTypes';
+import { SET_CURRENT_LINK, APPEND_LINK } from '../actionTypes';
 
 const initialState = {
   currentLink: '',
@@ -11,6 +11,13 @@ const currentLinkReducer = (state = initialState, action) => {
       return {
         ...state,
         currentLink: link,
+      };
+    }
+    case APPEND_LINK: {
+      const { link } = action.payload;
+      return {
+        ...state,
+        currentLink: `${state.currentLink}${link}`,
       };
     }
     default:

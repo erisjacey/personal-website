@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Card, CardActionArea, CardActions, CardContent, CardMedia,
@@ -32,11 +34,19 @@ const ItemCard = ({
   name, image, description, link,
 }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link href={link} hover="none" color="textPrimary">
+        <Link
+          href={link}
+          hover="none"
+          color="textPrimary"
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
+        >
           <CardMedia
             component="img"
             alt={name}
@@ -55,7 +65,14 @@ const ItemCard = ({
         </Link>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" color="secondaryDark" href={link}>
+        <Button
+          size="small"
+          color="secondaryDark"
+          href={link}
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
+        >
           See More
         </Button>
       </CardActions>

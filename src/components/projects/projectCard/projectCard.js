@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Card, CardActionArea, CardActions, CardContent, CardMedia,
@@ -20,18 +22,18 @@ const useStyles = makeStyles((theme) => ({
   content: {
     height: '110px',
   },
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+      color: '#2b7a78',
+    },
+  },
   button: {
     height: '40px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    left: {
-      justifySelf: 'flex-start',
-    },
-    right: {
-      justifySelf: 'flex-end',
-    },
   },
 }));
 
@@ -39,11 +41,20 @@ const ProjectCard = ({
   name, image, description, link, github,
 }) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link href={link} hover="none" color="textPrimary">
+        <Link
+          href={link}
+          hover="none"
+          color="textPrimary"
+          className={classes.link}
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
+        >
           <CardMedia
             component="img"
             alt={name}
@@ -55,14 +66,14 @@ const ProjectCard = ({
             <Typography gutterBottom variant="h5" component="h2">
               {name}
             </Typography>
-            <Typography variant="body2" color="secondaryDark" component="p">
+            <Typography variant="body2" component="p">
               {description}
             </Typography>
           </CardContent>
         </Link>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" color="secondaryDark" href={link} className={classes.button.left}>
+        <Button size="small" href={link} className={classes.link}>
           See More
         </Button>
         <Link
@@ -70,7 +81,10 @@ const ProjectCard = ({
           target="_blank"
           rel="noopener"
           color="textPrimary"
-          className={classes.button.right}
+          className={classes.link}
+          onClick={() => {
+            dispatch(setCurrentLink(link));
+          }}
         >
           <GitHub fontSize="small" />
         </Link>
