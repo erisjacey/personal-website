@@ -44,7 +44,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html',
-      favicon: 'src/assets/cake.png',
+      favicon: 'src/assets/signature_sm.jpg',
       inject: true,
     }),
     new WebpackManifestPlugin({
