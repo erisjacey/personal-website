@@ -87,7 +87,7 @@ const ModuleReviewAccordion = ({ module }) => {
         {renderText(`Exam: ${hasExam}`)}
       </Grid>
       <Grid item>
-        {renderText(<Link href={link} color="secondary">Link to NUSMods</Link>)}
+        {renderText(<Link href={link} color="secondary" target="_blank" rel="noopener">Link to NUSMods</Link>)}
       </Grid>
     </Grid>
   );
