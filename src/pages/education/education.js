@@ -25,7 +25,7 @@ const Education = () => {
       name: 'National University of Singapore',
       exam: 'B.Comp Computer Science (Hons)',
       years: `2019${LONG_DASH}present`,
-      grade: 'Current CAP: 4.75/5.0',
+      grade: 'Current CAP: 4.73/5.0',
     },
     image: LogoNUS,
     activities: [
