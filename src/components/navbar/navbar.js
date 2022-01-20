@@ -95,7 +95,7 @@ const NavBar = () => {
             <Nav.Link className="navbar__link" href="/experience" eventKey="/experience">Experience</Nav.Link>
             <Nav.Link className="navbar__link" href="/blog" eventKey="/blog">Blog</Nav.Link>
             <Nav.Link className="navbar__link" href="/projects" eventKey="/projects">Projects</Nav.Link>
-            <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link>
+            {/* <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
         {renderBreadcrumbs()}
