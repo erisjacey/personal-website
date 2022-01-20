@@ -133,31 +133,45 @@ const Y3S1 = () => {
     link: 'https://nusmods.com/modules/CS2104/programming-language-concepts',
     assessment: [
       {
-        component: 'Online Test',
-        weightage: '20%',
+        component: 'Tutorial Participation',
+        weightage: '10%',
+      },
+      {
+        component: 'Lab Assignments',
+        weightage: '35%',
+      },
+      {
+        component: 'Quizzes/Tests',
+        weightage: '15%',
       },
       {
         component: 'Final Exam',
-        weightage: '80%',
+        weightage: '40%',
       },
     ],
     review: {
-      overview: 'Pretty much a re-introduction of calculus topics taught in JC, and then a few more added on top just to make it a "complete" module. \
-                Topics that are taught include basic differentiation and integration, series, partial differentiation, double integrals, and differential equations.',
+      overview: 'This module serves a broad revision and introduction to key concepts ubiquitous across the more popular programming languages. \
+                In order, you will learn more about functional programming in Haskell (monads!), logic programming in Prolog, \
+                imperative programming in OCaml, and then object-oriented programming in Scala. \
+                A good part of the module was spent on Haskell (the first half of the sem), so it feels like the latter paradigms \
+                were spread a bit too thin. This module has been criticised for its poor structure as well, \
+                and while I personally didn\'t mind it because I liked the concepts taught, be sure to factor this \
+                in mind if you are interested in taking it as well.',
       workload: {
-        score: '4/10',
-        description: 'Pretty negligible workload considering very the few assessments and no assignments. \
-                     You just have to stay on top of the weekly lectures. \
-                     Tutorials might not even be necessary if you have a strong enough grasp (or enough experience) on calculus. \
-                     Some weeks (usually the last few) don\'t even have new concepts being taught; \
-                     they are usually reserved for revision.',
+        score: '6/10',
+        description: 'For better or worse, the structure of the module made it such that there were so few assignments, \
+                     I actually spent the least time on this module overall this sem. Not a lot of supplementary materials \
+                     provided means that if you wanted to solidify your understanding on the concepts taught, you would have to \
+                     go out of your way to learn them through external sources (YouTube, Stack Overflow, etc.). Besides that, \
+                     however, I wouldn\'t say this module is very heavy.',
       },
       difficulty: {
-        score: '4/10 for understanding, 10/10 for tests',
-        description: 'The concepts taught in the module are not the most difficult to learn well, but the real difficulty of this module lies in its tests. \
-                     Anecdotally, the final exam can go one of two ways: either it\'s really easy and the bell curve is really steep, \
-                     or it\'s really difficult and only the really smart (or lucky) students can score well. \
-                     Just do as many practice papers as you can in preparation for the exam and hope for the best.',
+        score: '8/10',
+        description: 'The concepts taught sometimes took some time to grasp, but I honestly think they were helpful \
+                     in understanding and appreciating the more common programming paradigms. Haskell and especially Prolog \
+                     were languages that initially felt really foreign, but they have kind of grown on me. \
+                     The (midterm) quiz and final exam were substantially difficult, and essentially felt like \
+                     a CS1101S paper, only set in Haskell, etc. instead of in JavaScript.',
       },
     },
     grades: {
@@ -175,29 +189,48 @@ const Y3S1 = () => {
     link: 'https://nusmods.com/modules/LAF1201/french-1',
     assessment: [
       {
-        component: 'Forgot',
-        weightage: 'lol%',
+        component: 'Tests (2 grammar, 2 writing, 2 reading comprehension)',
+        weightage: '30%',
+      },
+      {
+        component: 'Oral (1 speaking assignment, 1 speaking test, 2 listening comprehension tests)',
+        weightage: '40%',
+      },
+      {
+        component: 'Quizzes (2 vocabulary recap)',
+        weightage: '10%',
+      },
+      {
+        component: 'Homework (2 in total)',
+        weightage: '15%',
+      },
+      {
+        component: 'Attendance and Participation',
+        weightage: '5%',
       },
     ],
     review: {
-      overview: 'This module goes through a complete structural overhaul frequently enough that a personal recount of someone who has done it earlier is likely to be obsolete. \
-                However, what remains consistent is its terrible reputation among the student populace. \
-                We are supposed to be taught about technology and the ramifications of its abuse. \
-                How this (is attempted to be) done differs from semester to semester.',
+      overview: 'I actually enjoyed this module more than I thought I\'d thought I would! \
+                My sole experience with learning new languages (Chinese...) has been painful to say the least, \
+                so picking up French in contrast felt like a breath of fresh air. \
+                Every lesson was enjoyable, and learning the language was fun enough for me to practise it \
+                every single day outside of lesson time. I would highly recommend taking this module \
+                (or an introductory course to any new language you might be interested in) \
+                to take advantage of your time here at NUS.',
       workload: {
-        score: '5/10',
-        description: 'Personally, my workload only came in short bursts every two weeks or so, with one major spike (a ~4k word essay!) in my final week, so it wasn\'t too bad. \
-                     From what I\'ve heard of the subsequent semesters, they were pretty similar as well, with the difference being that their final week deliverable was even crazier than mine. \
-                     Again, your mileage may vary in a different semester.',
+        score: '9/10',
+        description: 'This rating is way more subjective than that for other modules, because I think \
+                     your mileage greatly depends on how much work you are willing to put in. \
+                     Simply going for and participating actively in lessons will probably get you by just fine, \
+                     but personally, you can add a lot of value for practising in your own time as well. \
+                     I spent up to an hour every day on Duolingo to supplement the things taught during class, \
+                     and this made me feel a lot more comfortable with the course topics and during class itself.',
       },
       difficulty: {
-        score: '5/10',
-        description: 'The essay readings to be done were immensely dry, but ultimately still relatively digestible. \
-                     The real challenge, however, comes from scoring well for the module. \
-                     A big reason why this module gets a bad rep is from its inability to accurately assess a student and give him his deserved score. \
-                     You have students putting in their 100% effort and getting a C, \
-                     and you have those pulling last-minute submissions and getting an A. \
-                     This is what your S/Us are here for, though.',
+        score: '4/10',
+        description: 'Another subjective rating depending on how comfortable you are with picking up the quirks and \
+                     idiosyncracies of a new language. Also, as mentioned, putting in the time to practise French \
+                     will probably make learning it in the long run much easier.',
       },
     },
     grades: {
@@ -215,31 +248,40 @@ const Y3S1 = () => {
     link: 'https://nusmods.com/modules/GEH1009/framing-bollywood-unpacking-the-magic',
     assessment: [
       {
-        component: 'Quizzes',
-        weightage: '20%',
-      },
-      {
-        component: 'Tutorial Participation',
+        component: 'Discussion Group Attendance and Participation',
         weightage: '10%',
       },
       {
-        component: 'Group Project',
-        weightage: '35%',
+        component: 'Group Presentation',
+        weightage: '20%',
       },
       {
-        component: 'Final Exam',
-        weightage: '35%',
+        component: 'Written Assignments (2 film analyses)',
+        weightage: '70%',
       },
     ],
     review: {
-      overview: 'I don\'t remember anything that was taught in this module because I paid 0 attention to it.',
+      overview: 'This module felt like a fun contrast from the usual technical classes I have been accustomed to take. \
+                It revolves around analysing social and political developments in India through Bollywood cinema. \
+                Each week hones in on a particular theme in Bollywood cinema, including topics such as \
+                romance and family, religion, sport, and gender. \
+                Case studies in the form of films that touch upon one or some of these topics were covered \
+                during weekly lectures and readings and were for the most part interesting. \
+                By far the best part about the module was watching a movie each week as part of the course material.',
       workload: {
-        score: '0/10',
-        description: 'Okay but seriously, you should approach other seniors for more useful information about this module.',
+        score: '6/10',
+        description: 'The only major parts of this module included the two film analysis essays and the group presentation. \
+                     Each of them took a substantial amount of time to complete and refine for the one week prior to which it was due. \
+                     The weekly readings would take some time to digest, but quite a number of them are unavoidable as its content \
+                     were necessary to include and reference in the three deliverables mentioned. \
+                     Finally, while the weekly movie assignments were enjoyable to watch, they were not only longer than your \
+                     average Hollywood flick, you could not blindly watch them either, and you had to analyse them even while watching.',
       },
       difficulty: {
-        score: '2/10',
-        description: 'The hard part was last-minute cramming for the Final exam so that I got a good enough grade to S/U the module.',
+        score: '6/10',
+        description: 'I was not used to the style of the typical social sciences module and the readings and essay assignments that \
+                     came along with it. Bollywood cinema also felt very foreign to me, and so coming up with substantial points \
+                     when I was writing the essays took me some time and effort (and a lot of Google tabs).',
       },
     },
     grades: {
