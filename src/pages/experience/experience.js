@@ -9,6 +9,7 @@ import LogoMatchub from 'myExperienceAssets/matchub_logo.png';
 import LogoNUS from 'myEducationAssets/nus_logo.png';
 import TeachingFeedbackReportCS1101S from 'myExperienceAssets/cs1101s_teaching-feedback-report.pdf';
 import TeachingFeedbackReportCS2030S from 'myExperienceAssets/cs2030s_teaching-feedback-report.pdf';
+import TeachingFeedbackReportCS1010E from 'myExperienceAssets/cs1010e_teaching-feedback-report.pdf';
 import './experience.scss';
 
 const Experience = () => {
@@ -88,9 +89,30 @@ const Experience = () => {
     },
   };
 
+  const EXPERIENCE_TA_AY2122S1_CS1010E = {
+    name: 'National University of Singapore',
+    role: `Teaching Assistant ${LONG_DASH} CS1010E Programming Methodology`,
+    duration: `Aug 2021${LONG_DASH}Dec 2021`,
+    image: LogoNUS,
+    skills: [
+      'Python',
+      'Procedural Programming',
+    ],
+    description: [
+      'Facilitate weekly 2-hour tutorial sessions for a group of 23 students',
+      'Spearhead and foster community learning among said group',
+      'Mark regularly-timed online assignments for students in said group',
+    ],
+    link: {
+      url: TeachingFeedbackReportCS1010E,
+      name: 'Teaching Feedback Report',
+    },
+  };
+
   const EXPERIENCE_TA = [
     EXPERIENCE_TA_AY2021S1_CS1101S,
     EXPERIENCE_TA_AY2021S2_CS2030S,
+    EXPERIENCE_TA_AY2122S1_CS1010E,
   ];
 
   const renderExperiencePapers = () => (
