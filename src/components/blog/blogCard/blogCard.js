@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Card, CardActionArea, CardActions, CardContent, CardMedia,
-  Typography, Button, Link,
+  Card, CardActionArea, CardContent, CardMedia,
+  Typography, Link,
 } from '@material-ui/core';
-import { GitHub } from '@material-ui/icons';
 import './blogCard.scss';
 
 const useStyles = makeStyles((theme) => ({
