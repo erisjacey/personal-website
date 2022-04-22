@@ -12,7 +12,7 @@ import './blogCard.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '300px',
+    height: '210px',
     width: '700px',
   },
   link: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   image: {
-    height: '200px',
+    height: '150px',
     objectFit: 'cover',
   },
   content: {
@@ -68,19 +68,6 @@ const BlogCard = ({
           </CardContent>
         </Link>
       </CardActionArea>
-      <CardActions className={classes.button}>
-        <Button
-          size="small"
-          color="textPrimary"
-          href={link}
-          className={classes.link}
-          onClick={() => {
-            dispatch(setCurrentLink(link));
-          }}
-        >
-          See More
-        </Button>
-      </CardActions>
     </Card>
   );
 };
