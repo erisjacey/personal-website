@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProjectCard = ({
-  name, image, description, link, github,
+  name, image, description, link, seeMore, github,
 }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -73,7 +73,13 @@ const ProjectCard = ({
         </Link>
       </CardActionArea>
       <CardActions className={classes.button}>
-        <Button size="small" href={link} className={classes.link}>
+        <Button
+          size="small"
+          href={seeMore}
+          className={classes.link}
+          target="_blank"
+          rel="noopener"
+        >
           See More
         </Button>
         <Link
@@ -98,6 +104,7 @@ ProjectCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  seeMore: PropTypes.string.isRequired,
   github: PropTypes.string.isRequired,
 };
 

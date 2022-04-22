@@ -11,8 +11,10 @@ import PageHeader from 'myComponents/pageHeader';
 import ProjectCard from 'myProjectsComponents/projectCard';
 import ThumbnailDailyCakeyBot from 'myProjectsAssets/daily-cakey-bot_thumbnail.jpeg';
 import ThumbnailPersonalWebsite from 'myProjectsAssets/personal-website_thumbnail.jpeg';
+import ThumbnailUpsideDown from 'myProjectsAssets/upside-down_thumbnail.jpeg';
 import DailyCakeyBot from './dailyCakeyBot';
 import PersonalWebsite from './personalWebsite';
+import UpsideDown from './upsideDown';
 import './projects.scss';
 
 const Projects = ({ path }) => {
@@ -24,6 +26,7 @@ const Projects = ({ path }) => {
     description: 'A simple Telegram bot for generating random dessert recipes',
     image: ThumbnailDailyCakeyBot,
     link: '/daily-cakey-bot',
+    seeMore: '/daily-cakey-bot',
     github: 'https://github.com/erisjacey/daily-cakey-bot',
     component: DailyCakeyBot,
   };
@@ -33,13 +36,25 @@ const Projects = ({ path }) => {
     description: 'My own personal website',
     image: ThumbnailPersonalWebsite,
     link: '/personal-website',
+    seeMore: '/personal-website',
     github: 'https://github.com/erisjacey/personal-website',
     component: PersonalWebsite,
+  };
+
+  const PROJECT_UPSIDE_DOWN = {
+    name: 'Upside Down',
+    description: 'A group project developed for CS3247 Game Development',
+    image: ThumbnailUpsideDown,
+    link: '/upside-down',
+    seeMore: 'https://tingalinga.itch.io/upside-down',
+    github: 'https://github.com/erisjacey/cs3247-group-project',
+    component: UpsideDown,
   };
 
   const PROJECTS = [
     PROJECT_DAILY_CAKEY_BOT,
     PROJECT_PERSONAL_WEBSITE,
+    PROJECT_UPSIDE_DOWN,
   ];
 
   const renderProjectCards = () => (
@@ -58,6 +73,7 @@ const Projects = ({ path }) => {
             image={project.image}
             description={project.description}
             link={`${path}${project.link}`}
+            seeMore={project.seeMore}
             github={project.github}
           />
         </Grid>
