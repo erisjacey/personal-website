@@ -4,22 +4,22 @@ import { useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Card, CardActionArea, CardActions, CardContent, CardMedia,
-  Typography, Button, Link,
+  Card, CardActionArea, CardContent, CardMedia,
+  Typography, Link,
 } from '@material-ui/core';
 import './itemCard.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '290px',
+    height: '260px',
     width: '300px',
   },
   image: {
-    height: '140px',
+    height: '160px',
     objectFit: 'cover',
   },
   content: {
-    height: '110px',
+    height: '100px',
   },
   link: {
     '&:hover': {
@@ -71,19 +71,6 @@ const ItemCard = ({
           </CardContent>
         </Link>
       </CardActionArea>
-      <CardActions className={classes.button}>
-        <Button
-          size="small"
-          color="secondaryDark"
-          href={link}
-          onClick={() => {
-            dispatch(setCurrentLink(link));
-          }}
-          className={classes.link}
-        >
-          See More
-        </Button>
-      </CardActions>
     </Card>
   );
 };
