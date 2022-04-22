@@ -10,8 +10,9 @@ const Document = ({ name, body }) => (
     container
     direction="column"
     justifyContent="center"
-    alignItems="center"
-    spacing={3}
+    alignItems="flex-start"
+    spacing={5}
+    style={{ padding: '0% 24%' }}
   >
     {body.map((Component) => (
       <Grid item>
