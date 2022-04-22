@@ -92,9 +92,11 @@ const ExperiencePaper = ({
         <Grid item>
           <Typography className={classes.secondaryHeading}>{name}</Typography>
         </Grid>
-        <Grid item>
-          <Typography className={classes.sectionText}>{duration}</Typography>
-        </Grid>
+        {duration.map((dur) => (
+          <Grid item>
+            <Typography className={classes.sectionText}>{dur}</Typography>
+          </Grid>
+        ))}
         <Grid item style={{ width: '100%' }}>
           {skills.map((skill) => (
             <Chip
@@ -162,7 +164,7 @@ const ExperiencePaper = ({
 ExperiencePaper.propTypes = {
   name: PropTypes.string.isRequired,
   role: PropTypes.string.isRequired,
-  duration: PropTypes.string.isRequired,
+  duration: PropTypes.arrayOf(PropTypes.string).isRequired,
   image: PropTypes.string.isRequired,
   skills: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,

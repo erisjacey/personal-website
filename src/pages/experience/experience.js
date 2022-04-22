@@ -19,7 +19,9 @@ const Experience = () => {
   const EXPERIENCE_INTERNSHIP_MATCHUB = {
     name: 'MatcHub.co',
     role: 'Software Engineering Intern',
-    duration: `Dec 2020${LONG_DASH}present`,
+    duration: [
+      `Dec 2020${LONG_DASH}Aug 2021`,
+    ],
     image: LogoMatchub,
     skills: [
       'Full-Stack Web Development',
@@ -52,7 +54,9 @@ const Experience = () => {
   const EXPERIENCE_TA_AY2021S1_CS1101S = {
     name: 'National University of Singapore',
     role: `Teaching Assistant ${LONG_DASH} CS1101S Programming Methodology`,
-    duration: `Aug 2020${LONG_DASH}Dec 2020`,
+    duration: [
+      `Aug 2020${LONG_DASH}Dec 2020`,
+    ],
     image: LogoNUS,
     skills: [
       'JavaScript',
@@ -72,7 +76,10 @@ const Experience = () => {
   const EXPERIENCE_TA_AY2021S2_CS2030S = {
     name: 'National University of Singapore',
     role: `Teaching Assistant ${LONG_DASH} CS2030S Programming Methodology II`,
-    duration: `Jan 2021${LONG_DASH}Apr 2021`,
+    duration: [
+      `Jan 2021${LONG_DASH}Apr 2021`,
+      `Jan 2022${LONG_DASH}Apr 2022`,
+    ],
     image: LogoNUS,
     skills: [
       'Java',
@@ -80,7 +87,7 @@ const Experience = () => {
       'Vim',
     ],
     description: [
-      'Facilitate weekly 2-hour lab sessions for a group of 11 students',
+      'Facilitate weekly 2-hour lab sessions for a group of 11/12 students',
       'Mark regularly-timed online lab assignments for students in said group',
     ],
     link: {
@@ -92,7 +99,9 @@ const Experience = () => {
   const EXPERIENCE_TA_AY2122S1_CS1010E = {
     name: 'National University of Singapore',
     role: `Teaching Assistant ${LONG_DASH} CS1010E Programming Methodology`,
-    duration: `Aug 2021${LONG_DASH}Dec 2021`,
+    duration: [
+      `Aug 2021${LONG_DASH}Dec 2021`,
+    ],
     image: LogoNUS,
     skills: [
       'Python',
