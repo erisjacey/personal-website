@@ -15,11 +15,13 @@ import ThumbnailY1S2 from 'myBlogAssets/moduleReviews/y1s2_thumbnail.jpeg';
 import ThumbnailY2S1 from 'myBlogAssets/moduleReviews/y2s1_thumbnail.jpeg';
 import ThumbnailY2S2 from 'myBlogAssets/moduleReviews/y2s2_thumbnail.jpeg';
 import ThumbnailY3S1 from 'myBlogAssets/moduleReviews/y3s1_thumbnail.jpeg';
+import ThumbnailY3S2 from 'myBlogAssets/moduleReviews/y3s2_thumbnail.jpg';
 import Y1S1 from './y1s1';
 import Y1S2 from './y1s2';
 import Y2S1 from './y2s1';
 import Y2S2 from './y2s2';
 import Y3S1 from './y3s1';
+import Y3S2 from './y3s2';
 import './moduleReviews.scss';
 
 const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
@@ -63,12 +65,21 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
     component: Y3S1,
   };
 
+  const SEMESTER_Y3S2 = {
+    name: 'Year 3, Semester 2',
+    description: `Jan 2022 ${LONG_DASH} May 2022`,
+    image: ThumbnailY3S2,
+    link: '/y3s2',
+    component: Y3S2,
+  };
+
   const SEMESTERS = [
     SEMESTER_Y1S1,
     SEMESTER_Y1S2,
     SEMESTER_Y2S1,
     SEMESTER_Y2S2,
     SEMESTER_Y3S1,
+    SEMESTER_Y3S2,
   ];
 
   const renderSemesterCards = () => (
