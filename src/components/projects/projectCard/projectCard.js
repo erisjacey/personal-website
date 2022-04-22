@@ -75,12 +75,12 @@ const ProjectCard = ({
       <CardActions className={classes.button}>
         <Button
           size="small"
-          href={seeMore}
+          href={seeMore.text === '' ? link : seeMore.link}
           className={classes.link}
-          target="_blank"
+          target={seeMore.text === '' ? '' : '_blank'}
           rel="noopener"
         >
-          See More
+          {seeMore.text === '' ? 'See More' : seeMore.text}
         </Button>
         <Link
           href={github}
@@ -104,7 +104,10 @@ ProjectCard.propTypes = {
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-  seeMore: PropTypes.string.isRequired,
+  seeMore: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+  }),
   github: PropTypes.string.isRequired,
 };
 

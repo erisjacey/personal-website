@@ -26,7 +26,10 @@ const Projects = ({ path }) => {
     description: 'A simple Telegram bot for generating random dessert recipes',
     image: ThumbnailDailyCakeyBot,
     link: '/daily-cakey-bot',
-    seeMore: '/daily-cakey-bot',
+    seeMore: {
+      text: '',
+      link: '/daily-cakey-bot',
+    },
     github: 'https://github.com/erisjacey/daily-cakey-bot',
     component: DailyCakeyBot,
   };
@@ -36,7 +39,10 @@ const Projects = ({ path }) => {
     description: 'My own personal website',
     image: ThumbnailPersonalWebsite,
     link: '/personal-website',
-    seeMore: '/personal-website',
+    seeMore: {
+      text: '',
+      link: '/personal-website',
+    },
     github: 'https://github.com/erisjacey/personal-website',
     component: PersonalWebsite,
   };
@@ -46,7 +52,10 @@ const Projects = ({ path }) => {
     description: 'A group project developed for CS3247 Game Development',
     image: ThumbnailUpsideDown,
     link: '/upside-down',
-    seeMore: 'https://tingalinga.itch.io/upside-down',
+    seeMore: {
+      text: 'itch.io Page',
+      link: 'https://tingalinga.itch.io/upside-down',
+    },
     github: 'https://github.com/erisjacey/cs3247-group-project',
     component: UpsideDown,
   };
