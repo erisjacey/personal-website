@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -6,61 +7,64 @@ import {
 } from '@material-ui/core';
 import './experiencePaper.scss';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: '300px',
-    width: '700px',
-    padding: '2% 0%',
-  },
-  image: {
-    height: '180px',
-    width: '180px',
-    objectFit: 'contain',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(22),
-    fontWeight: 'bold',
-    color: theme.palette.text.primary,
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(20),
-    color: theme.palette.text.primary,
-  },
-  sectionText: {
-    fontSize: theme.typography.pxToRem(17),
-    color: theme.palette.text.secondary,
-  },
-  chip: {
-    margin: '1% 1%',
-  },
-  descriptionHeading: {
-    fontSize: theme.typography.pxToRem(17),
-    fontWeight: 'bold',
-    color: theme.palette.text.primary,
-  },
-  descriptionText: {
-    fontSize: theme.typography.pxToRem(17),
-    color: theme.palette.text.secondary,
-  },
-  link: {
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
-  button: {
-    fontSize: theme.typography.pxToRem(17),
-    fontWeight: 'bold',
-    marginTop: '10%',
-    '&:hover': {
-      backgroundColor: '#3aafa9',
-      color: '#feffff',
-    },
-  },
-}));
-
 const ExperiencePaper = ({
   name, role, duration, image, skills, description, link,
 }) => {
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      minHeight: '300px',
+      width: isDesktopView ? '700px' : '350px',
+      padding: isDesktopView ? '2% 0%' : '2%',
+    },
+    image: {
+      height: isDesktopView ? '180px' : '100px',
+      width: isDesktopView ? '180px' : '100px',
+      marginBottom: isDesktopView ? '0%' : '4%',
+      objectFit: 'contain',
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 22 : 20),
+      fontWeight: 'bold',
+      color: theme.palette.text.primary,
+    },
+    secondaryHeading: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 20 : 18),
+      color: theme.palette.text.primary,
+    },
+    sectionText: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 17 : 15),
+      color: theme.palette.text.secondary,
+    },
+    chip: {
+      margin: '1% 1%',
+      fontSize: theme.typography.pxToRem(isDesktopView ? 14 : 12),
+    },
+    descriptionHeading: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 17 : 16),
+      fontWeight: 'bold',
+      color: theme.palette.text.primary,
+    },
+    descriptionText: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 17 : 15),
+      color: theme.palette.text.secondary,
+    },
+    link: {
+      '&:hover': {
+        textDecoration: 'none',
+      },
+    },
+    button: {
+      fontSize: theme.typography.pxToRem(isDesktopView ? 17 : 15),
+      fontWeight: 'bold',
+      marginTop: '10%',
+      '&:hover': {
+        backgroundColor: '#3aafa9',
+        color: '#feffff',
+      },
+    },
+  }));
   const classes = useStyles();
 
   const renderTopHalf = () => (
@@ -70,8 +74,9 @@ const ExperiencePaper = ({
       direction="row"
       justifyContent="center"
       alignItems="flex-start"
+      style={{ marginBottom: isDesktopView ? '0%' : '4%' }}
     >
-      <Grid item xs={4}>
+      <Grid item xs={isDesktopView ? 4 : 12}>
         <img
           src={image}
           alt={`Logo for ${name}`}
@@ -80,7 +85,7 @@ const ExperiencePaper = ({
       </Grid>
       <Grid
         item
-        xs={7}
+        xs={isDesktopView ? 7 : 12}
         container
         direction="column"
         justifyContent="space-around"

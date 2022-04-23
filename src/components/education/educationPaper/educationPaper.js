@@ -16,7 +16,7 @@ const EducationPaper = ({
     root: {
       minHeight: '300px',
       width: isDesktopView ? '700px' : '300px',
-      padding: '2% 0%',
+      padding: isDesktopView ? '2% 0%' : '2%',
     },
     image: {
       height: isDesktopView ? '180px' : '100px',
