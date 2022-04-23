@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Container, Navbar, Nav,
 } from 'react-bootstrap';
@@ -29,13 +28,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = ({ showTopNavMenu }) => {
+const NavBar = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { currentLink } = useSelector((state) => state.currentLink);
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
 
   const showBreadcrumbs = {
-    display: showTopNavMenu ? 'flex' : 'none',
+    display: isDesktopView ? 'flex' : 'none',
   };
 
   const getBaseLink = () => `/${currentLink.split('/')[1]}`;
@@ -127,10 +127,6 @@ const NavBar = ({ showTopNavMenu }) => {
       </Container>
     </Navbar>
   );
-};
-
-NavBar.propTypes = {
-  showTopNavMenu: PropTypes.bool.isRequired,
 };
 
 export default NavBar;

@@ -5,8 +5,10 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { setIsDesktopView } from 'myRedux/actions';
 import NavBar from 'myComponents/navbar';
 import Footer from 'myComponents/footer';
 import Home from 'myHomePage';
@@ -43,7 +45,7 @@ const theme = createMuiTheme({
 });
 
 const RouteWithComponents = ({
-  exact, path, responsive, component: Component, ...rest
+  exact, path, component: Component, ...rest
 }) => (
   <Route
     exact={exact}
@@ -51,7 +53,7 @@ const RouteWithComponents = ({
     {...rest}
     render={(routeProps) => (
       <>
-        <NavBar showTopNavMenu={responsive.showTopNavMenu} />
+        <NavBar />
         <div className="main-page__body">
           <Component path={path} {...routeProps} />
         </div>
@@ -62,6 +64,8 @@ const RouteWithComponents = ({
 );
 
 const App = () => {
+  const dispatch = useDispatch();
+
   const PAGES = [
     {
       path: '/home',
@@ -89,11 +93,8 @@ const App = () => {
     },
   ];
 
-  const [windowWidth, setWindowWidth] = useState(0);
-
   const updateDimensions = () => {
-    const width = window.innerWidth;
-    setWindowWidth(width);
+    dispatch(setIsDesktopView(window.innerWidth > 1023));
   };
 
   useEffect(() => {
@@ -101,10 +102,6 @@ const App = () => {
     window.addEventListener('resize', updateDimensions);
     return () => window.removeEventListener('resize', updateDimensions);
   }, []);
-
-  const responsive = {
-    showTopNavMenu: windowWidth > 1023,
-  };
 
   return (
     <div className="main-page">
@@ -118,7 +115,6 @@ const App = () => {
               <RouteWithComponents
                 key={page.path}
                 path={page.path}
-                responsive={responsive}
                 component={page.component}
               />
             ))}

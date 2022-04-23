@@ -1,14 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import {
-  Container, Row, Col, Navbar, Nav, NavDropdown,
+  Container, Navbar, Nav,
 } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Grid, Avatar, Typography, Link,
+  Link,
 } from '@material-ui/core';
 import { Email, GitHub, LinkedIn } from '@material-ui/icons';
-import ProfilePic from 'myAssets/my-personal-picture_square.jpg';
 import './footer.scss';
 
 const useStyles = makeStyles((theme) => ({
