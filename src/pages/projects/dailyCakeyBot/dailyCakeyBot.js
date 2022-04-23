@@ -7,7 +7,7 @@ import './dailyCakeyBot.scss';
 
 const useStyles = makeStyles((theme) => ({
   image: {
-    width: '650px',
+    width: '100%',
     height: 'auto',
     objectFit: 'cover',
   },

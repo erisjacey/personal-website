@@ -9,6 +9,7 @@ import './document.scss';
 const Document = ({ name, body }) => {
   const { isDesktopView } = useSelector((state) => state.isDesktopView);
   const padding = isDesktopView ? '0% 24%' : '0% 10%';
+  const spacing = isDesktopView ? 5 : 3;
 
   return (
     <Grid
@@ -16,7 +17,7 @@ const Document = ({ name, body }) => {
       direction="column"
       justifyContent="center"
       alignItems="flex-start"
-      spacing={5}
+      spacing={spacing}
       style={{ padding }}
     >
       {body.map((Component) => (
