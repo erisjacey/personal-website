@@ -1,15 +1,26 @@
 import React from 'react';
 import Document from 'myComponents/document';
+import TextBlock from 'myComponents/textBlock';
 import './dailyCakeyBot.scss';
-import { useSelector, useDispatch } from 'react-redux';
-
 
 const DailyCakeyBot = () => {
   const NAME = 'Daily Cakey Bot';
-  console.log(useSelector((state) => state.currentLink));
+
+  const AboutThisProject = () => (
+    <TextBlock
+      heading="About This Project"
+      body={[
+        'This Telegram bot was developed using Python and deployed on Heroku.',
+      ]}
+    />
+  );
+
+  const BODY = [
+    AboutThisProject,
+  ];
 
   return (
-    <Document name={NAME} />
+    <Document name={NAME} body={BODY} />
   );
 };
 
