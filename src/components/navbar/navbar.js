@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import {
   Container, Navbar, Nav, NavDropdown, Breadcrumb,
@@ -29,10 +30,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = () => {
+const NavBar = ({ showTopNavMenu }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { currentLink } = useSelector((state) => state.currentLink);
+
+  const showNav = {
+    display: showTopNavMenu ? 'flex' : 'none',
+  };
+
+  const showMenuIcon = {
+    display: showTopNavMenu ? 'none' : 'flex',
+  };
 
   const getBaseLink = () => `/${currentLink.split('/')[1]}`;
 
@@ -51,6 +60,37 @@ const NavBar = () => {
     }
     return breadcrumbLinks;
   };
+
+  const renderNavBrand = () => (
+    <Navbar.Brand
+      href="/home"
+      onClick={() => dispatch(setCurrentLink('/home'))}
+      style={showNav}
+    >
+      <div className="navbar__brand">
+        Eris Jacey
+      </div>
+    </Navbar.Brand>
+  );
+
+  const renderNavLinks = () => (
+    <Navbar.Collapse
+      id="basic-navbar-nav"
+      style={showNav}
+    >
+      <Nav
+        justify
+        activeKey={getBaseLink()}
+        onSelect={(selectedKey) => dispatch(setCurrentLink(selectedKey))}
+      >
+        <Nav.Link className="navbar__link" href="/education" eventKey="/education">Education</Nav.Link>
+        <Nav.Link className="navbar__link" href="/experience" eventKey="/experience">Experience</Nav.Link>
+        <Nav.Link className="navbar__link" href="/blog" eventKey="/blog">Blog</Nav.Link>
+        <Nav.Link className="navbar__link" href="/projects" eventKey="/projects">Projects</Nav.Link>
+        <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  );
 
   const renderBreadcrumbs = () => {
     const breadcrumbLinks = getBreadcrumbLinks();
@@ -80,28 +120,16 @@ const NavBar = () => {
   return (
     <Navbar bg="primary3" expand="lg" sticky="top" variant="dark">
       <Container>
-        <Navbar.Brand href="/home" onClick={() => dispatch(setCurrentLink('/home'))}>
-          <div className="navbar__brand">
-            Eris Jacey
-          </div>
-        </Navbar.Brand>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            justify
-            activeKey={getBaseLink()}
-            onSelect={(selectedKey) => dispatch(setCurrentLink(selectedKey))}
-          >
-            <Nav.Link className="navbar__link" href="/education" eventKey="/education">Education</Nav.Link>
-            <Nav.Link className="navbar__link" href="/experience" eventKey="/experience">Experience</Nav.Link>
-            <Nav.Link className="navbar__link" href="/blog" eventKey="/blog">Blog</Nav.Link>
-            <Nav.Link className="navbar__link" href="/projects" eventKey="/projects">Projects</Nav.Link>
-            {/* <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link> */}
-          </Nav>
-        </Navbar.Collapse>
+        {renderNavBrand()}
+        {renderNavLinks()}
         {renderBreadcrumbs()}
       </Container>
     </Navbar>
   );
+};
+
+NavBar.propTypes = {
+  showTopNavMenu: PropTypes.bool.isRequired,
 };
 
 export default NavBar;

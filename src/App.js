@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -43,7 +43,7 @@ const theme = createMuiTheme({
 });
 
 const RouteWithComponents = ({
-  exact, path, component: Component, ...rest
+  exact, path, responsive, component: Component, ...rest
 }) => (
   <Route
     exact={exact}
@@ -51,7 +51,7 @@ const RouteWithComponents = ({
     {...rest}
     render={(routeProps) => (
       <>
-        <NavBar />
+        <NavBar showTopNavMenu={responsive.showTopNavMenu} />
         <div className="main-page__body">
           <Component path={path} {...routeProps} />
         </div>
@@ -89,6 +89,23 @@ const App = () => {
     },
   ];
 
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    setWindowWidth(width);
+  };
+
+  useEffect(() => {
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+
+  const responsive = {
+    showTopNavMenu: windowWidth > 1023,
+  };
+
   return (
     <div className="main-page">
       <ThemeProvider theme={theme}>
@@ -102,6 +119,7 @@ const App = () => {
               <RouteWithComponents
                 key={page.path}
                 path={page.path}
+                responsive={responsive}
                 component={page.component}
               />
             ))}
@@ -115,6 +133,9 @@ const App = () => {
 RouteWithComponents.propTypes = {
   exact: PropTypes.bool,
   path: PropTypes.string.isRequired,
+  responsive: PropTypes.shape({
+    showTopNavMenu: PropTypes.bool,
+  }).isRequired,
   component: PropTypes.func.isRequired,
 };
 
