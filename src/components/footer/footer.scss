@@ -4,6 +4,11 @@
   height: 100%;
   margin-top: 3%;
 
+  &__mobile {
+    height: 100%;
+    margin-top: 8%;
+  }
+
   &__left {
     &__text {
       color: $primary5;

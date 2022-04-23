@@ -7,7 +7,7 @@ const PageHeader = ({ name, subHeader, others }) => {
   const { isDesktopView } = useSelector((state) => state.isDesktopView);
   const mobile = isDesktopView ? '' : '__mobile';
   return (
-    <div className="page-header">
+    <div className={`page-header${mobile}`}>
       <h1 className={`page-header__title${mobile}`}>{name}</h1>
       <h3 className={`page-header__sub-header${mobile}`}>{subHeader}</h3>
       {others.map((Component) => <Component />)}

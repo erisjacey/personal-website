@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Container, Navbar, Nav,
 } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Link,
@@ -28,9 +29,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
   const classes = useStyles();
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+  const mobile = isDesktopView ? '' : '__mobile';
 
   return (
-    <Navbar bg="primary1" variant="dark" className="footer">
+    <Navbar bg="primary1" variant="dark" className={`footer${mobile}`}>
       <Container>
         <Navbar.Toggle />
         <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
