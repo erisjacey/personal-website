@@ -1,29 +1,35 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   Grid,
 } from '@material-ui/core';
 import './document.scss';
 
-const Document = ({ name, body }) => (
-  <Grid
-    container
-    direction="column"
-    justifyContent="center"
-    alignItems="flex-start"
-    spacing={5}
-    style={{ padding: '0% 24%' }}
-  >
-    {body.map((Component) => (
-      <Grid
-        item
-        style={{ width: '100%' }}
-      >
-        <Component />
-      </Grid>
-    ))}
-  </Grid>
-);
+const Document = ({ name, body }) => {
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+  const padding = isDesktopView ? '0% 24%' : '0% 10%';
+
+  return (
+    <Grid
+      container
+      direction="column"
+      justifyContent="center"
+      alignItems="flex-start"
+      spacing={5}
+      style={{ padding }}
+    >
+      {body.map((Component) => (
+        <Grid
+          item
+          style={{ width: '100%' }}
+        >
+          <Component />
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
 
 Document.propTypes = {
   name: PropTypes.string.isRequired,
