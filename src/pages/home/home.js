@@ -22,7 +22,7 @@ const Home = () => {
 
   const PAGE_NAME = 'Hello World';
   const NAME = 'Home';
-  const PAGE_SUB_HEADER = 'I am Eris Jacey, a Computer Science undergraduate from the National University of Singapore (NUS), and minimalist enthusiast.';
+  const PAGE_SUB_HEADER = 'I am Eris Jacey, minimalist enthusiast.';
 
   const ProfilePic = () => <img src={PersonalPicture} alt="Handsome boy" className={classes.image} />;
 
@@ -32,6 +32,7 @@ const Home = () => {
       body={[
         'Hi everyone! \
       My name is Eris Jacey Masagca, a 24-year-old raised (and currently living) in Singapore. \
+      I am currently pursuing a Computer Science Bachelor\'s degree at the National University of Singapore (NUS). \
       Some of my hobbies include scuba diving, video games, basketball and fitness.',
         'My philosophy as a developer is to always strive to produce code with the best design practices. \
       I am always looking to improve and gain valuable experience in all aspects.',
