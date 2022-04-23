@@ -49,7 +49,7 @@ const Projects = ({ path }) => {
 
   const PROJECT_UPSIDE_DOWN = {
     name: 'Upside Down',
-    description: 'A group project developed for CS3247 Game Development',
+    description: 'A Unity group project developed for CS3247 Game Development',
     image: ThumbnailUpsideDown,
     link: '/upside-down',
     seeMore: {

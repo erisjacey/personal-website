@@ -1,8 +1,9 @@
+/* eslint-disable no-multi-str */
 import React from 'react';
 import PageHeader from 'myComponents/pageHeader';
 import { makeStyles } from '@material-ui/core/styles';
 import Document from 'myComponents/document';
-import Paragraph from 'myComponents/paragraph';
+import TextBlock from 'myComponents/textBlock';
 import PersonalPicture from 'myAssets/my-personal-picture_square.jpg';
 import './home.scss';
 
@@ -25,18 +26,27 @@ const Home = () => {
   const ProfilePic = () => <img src={PersonalPicture} alt="Handsome boy" className={classes.image} />;
 
   const AboutMe = () => (
-    <Paragraph
+    <TextBlock
       heading="About Me"
-      body="Hi everyone!
-      My name is Eris Jacey Masagca, a 24-year-old raised and currently living in Singapore.
-      Some of my hobbies include scuba diving, video games, basketball and fitness (basically going to the gym)."
+      body={[
+        'Hi everyone! \
+      My name is Eris Jacey Masagca, a 24-year-old raised (and currently living) in Singapore. \
+      Some of my hobbies include scuba diving, video games, basketball and fitness.',
+        'My philosophy as a developer is to always strive to produce code with the best design practices. \
+      I am always looking to improve and gain valuable experience in all aspects.',
+        'Feel free to contact me via any of the avenues available at the bottom of this website. \
+      Meeting new people is always fun!',
+      ]}
     />
   );
 
   const ThisWebsite = () => (
-    <Paragraph
+    <TextBlock
       heading="This Website"
-      body="This website serves as a place to ____________."
+      body={[
+        'This website serves as a three-fold display of: my academic and professional endeavours, my random thoughts in the form of blogs, as well as my completed projects. \
+      Please feel free to browse the different parts of this website to see any of them in more detail!',
+      ]}
     />
   );
 
