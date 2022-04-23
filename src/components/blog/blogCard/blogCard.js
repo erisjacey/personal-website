@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
@@ -9,35 +9,36 @@ import {
 } from '@material-ui/core';
 import './blogCard.scss';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '210px',
-    width: '700px',
-  },
-  link: {
-    '&:hover': {
-      color: '#2b7a78',
-    },
-  },
-  image: {
-    height: '150px',
-    objectFit: 'cover',
-  },
-  content: {
-    height: '60px',
-  },
-  button: {
-    height: '40px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}));
-
 const BlogCard = ({
   name, image, link,
 }) => {
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      height: '210px',
+      width: isDesktopView ? '700px' : '300px',
+    },
+    link: {
+      '&:hover': {
+        color: '#2b7a78',
+      },
+    },
+    image: {
+      height: '150px',
+      objectFit: 'cover',
+    },
+    content: {
+      height: '60px',
+    },
+    button: {
+      height: '40px',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+  }));
   const classes = useStyles();
   const dispatch = useDispatch();
 
