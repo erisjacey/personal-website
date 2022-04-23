@@ -15,7 +15,10 @@ const Document = ({ name, body }) => (
     style={{ padding: '0% 24%' }}
   >
     {body.map((Component) => (
-      <Grid item>
+      <Grid
+        item
+        style={{ width: '100%' }}
+      >
         <Component />
       </Grid>
     ))}
@@ -35,6 +38,7 @@ Document.defaultProps = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        textAlign: 'center',
       }}
       >
         Coming soon!
