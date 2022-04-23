@@ -109,7 +109,6 @@ const App = () => {
   return (
     <div className="main-page">
       <ThemeProvider theme={theme}>
-        {/* {renderHeader()} */}
         <Router>
           <Switch>
             <Route exact path="/">

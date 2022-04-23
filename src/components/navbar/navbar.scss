@@ -2,15 +2,32 @@
 
 .navbar {
   &__brand {
-    color: $primary5;
-    font-size: 18px;
-    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    &__logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 7%;
+    }
+
+    &__text {
+      color: $primary5;
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 
   &__link {
     color: white;
     font-size: 18px;
     font-weight: 500;
+  }
+
+  &__menu-icon {
+    color: white;
   }
 
   &__breadcrumbs {

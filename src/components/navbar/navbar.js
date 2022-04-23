@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import {
-  Container, Navbar, Nav, NavDropdown, Breadcrumb,
+  Container, Navbar, Nav,
 } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Grid, Avatar, Typography, Link, Breadcrumbs,
+  Link, Breadcrumbs,
 } from '@material-ui/core';
-import { Email, GitHub, LinkedIn } from '@material-ui/icons';
+import SignatureIcon from 'myAssets/signature_sm.jpg';
 import './navbar.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -35,12 +34,8 @@ const NavBar = ({ showTopNavMenu }) => {
   const dispatch = useDispatch();
   const { currentLink } = useSelector((state) => state.currentLink);
 
-  const showNav = {
+  const showBreadcrumbs = {
     display: showTopNavMenu ? 'flex' : 'none',
-  };
-
-  const showMenuIcon = {
-    display: showTopNavMenu ? 'none' : 'flex',
   };
 
   const getBaseLink = () => `/${currentLink.split('/')[1]}`;
@@ -65,9 +60,14 @@ const NavBar = ({ showTopNavMenu }) => {
     <Navbar.Brand
       href="/home"
       onClick={() => dispatch(setCurrentLink('/home'))}
-      style={showNav}
+      className="navbar__brand"
     >
-      <div className="navbar__brand">
+      <img
+        alt=""
+        src={SignatureIcon}
+        className="navbar__brand__logo"
+      />
+      <div className="navbar__brand__text">
         Eris Jacey
       </div>
     </Navbar.Brand>
@@ -76,7 +76,6 @@ const NavBar = ({ showTopNavMenu }) => {
   const renderNavLinks = () => (
     <Navbar.Collapse
       id="basic-navbar-nav"
-      style={showNav}
     >
       <Nav
         justify
@@ -87,7 +86,7 @@ const NavBar = ({ showTopNavMenu }) => {
         <Nav.Link className="navbar__link" href="/experience" eventKey="/experience">Experience</Nav.Link>
         <Nav.Link className="navbar__link" href="/blog" eventKey="/blog">Blog</Nav.Link>
         <Nav.Link className="navbar__link" href="/projects" eventKey="/projects">Projects</Nav.Link>
-        <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link>
+        {/* <Nav.Link className="navbar__link" href="/contact" eventKey="/contact">Contact</Nav.Link> */}
       </Nav>
     </Navbar.Collapse>
   );
@@ -99,6 +98,7 @@ const NavBar = ({ showTopNavMenu }) => {
         separator={<div className="navbar__breadcrumbs__separator">/</div>}
         aria-label="breadcrumb"
         className="navbar__breadcrumbs"
+        style={showBreadcrumbs}
       >
         {breadcrumbLinks.map((breadcrumb, index) => (index !== breadcrumbLinks.length - 1
           ? (
@@ -118,8 +118,9 @@ const NavBar = ({ showTopNavMenu }) => {
   };
 
   return (
-    <Navbar bg="primary3" expand="lg" sticky="top" variant="dark">
-      <Container>
+    <Navbar bg="primary3" expand="lg" sticky="top" variant="dark" collapseOnSelect>
+      <Container className="h-100">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         {renderNavBrand()}
         {renderNavLinks()}
         {renderBreadcrumbs()}
