@@ -1,7 +1,7 @@
 /* eslint-disable no-multi-str */
 import React from 'react';
-import PageHeader from 'myComponents/pageHeader';
 import { makeStyles } from '@material-ui/core/styles';
+import PageHeader from 'myComponents/pageHeader';
 import Document from 'myComponents/document';
 import TextBlock from 'myComponents/textBlock';
 import PersonalPicture from 'myAssets/my-personal-picture_square.jpg';
