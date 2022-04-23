@@ -32,45 +32,44 @@ const Footer = () => {
   const classes = useStyles();
 
   return (
-    <Navbar bg="primary1" expand="lg" variant="dark" className="footer">
+    <Navbar bg="primary1" variant="dark" className="footer">
       <Container>
+        <Navbar.Toggle />
         <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
-          <div className="footer__left__text">
-            Website developed by Eris Jacey Masagca, 2021.
-          </div>
-        </Navbar.Collapse>
-        <Navbar.Collapse className="footer__right" id="basic-navbar-nav">
-          <Container>
-            <Row>
-              <Col sm={{ span: 1, offset: 9 }}>
-                <Link
-                  href="mailto:eris_jacey@hotmail.com"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <Email fontSize="large" className="footer__right__icon" />
-                </Link>
-              </Col>
-              <Col sm={{ span: 1 }}>
-                <Link
-                  href="https://github.com/erisjacey"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <GitHub fontSize="large" className="footer__right__icon" />
-                </Link>
-              </Col>
-              <Col sm={{ span: 1 }}>
-                <Link
-                  href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <LinkedIn fontSize="large" className="footer__right__icon" />
-                </Link>
-              </Col>
-            </Row>
-          </Container>
+          <Nav className="float-left">
+            <Navbar.Text className="footer__left__text">
+              Website developed by Eris Jacey Masagca, 2021.
+            </Navbar.Text>
+          </Nav>
+          <Nav className="ms-auto gap-2">
+            <Navbar.Text>
+              <Link
+                href="mailto:eris_jacey@hotmail.com"
+                target="_blank"
+                rel="noopener"
+              >
+                <Email fontSize="large" className="footer__right__icon" />
+              </Link>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Link
+                href="https://github.com/erisjacey"
+                target="_blank"
+                rel="noopener"
+              >
+                <GitHub fontSize="large" className="footer__right__icon" />
+              </Link>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Link
+                href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
+                target="_blank"
+                rel="noopener"
+              >
+                <LinkedIn fontSize="large" className="footer__right__icon" />
+              </Link>
+            </Navbar.Text>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

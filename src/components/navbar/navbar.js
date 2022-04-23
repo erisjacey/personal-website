@@ -119,7 +119,7 @@ const NavBar = ({ showTopNavMenu }) => {
 
   return (
     <Navbar bg="primary3" expand="lg" sticky="top" variant="dark" collapseOnSelect>
-      <Container className="h-100">
+      <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         {renderNavBrand()}
         {renderNavLinks()}

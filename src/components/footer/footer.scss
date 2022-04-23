@@ -1,12 +1,13 @@
 @import 'src/App.scss';
 
 .footer {
-  height: 75px;
+  height: 100%;
   margin-top: 3%;
 
   &__left {
     &__text {
       color: $primary5;
+      text-align: left;
     }
   }
 
