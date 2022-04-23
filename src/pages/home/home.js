@@ -1,5 +1,6 @@
 /* eslint-disable no-multi-str */
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import PageHeader from 'myComponents/pageHeader';
 import Document from 'myComponents/document';
@@ -7,17 +8,17 @@ import TextBlock from 'myComponents/textBlock';
 import PersonalPicture from 'myAssets/my-personal-picture_square.jpg';
 import './home.scss';
 
-const useStyles = makeStyles((theme) => ({
-  image: {
-    width: '250px',
-    height: 'auto',
-    objectFit: 'cover',
-    borderRadius: '50%',
-  },
-}));
-
 const Home = () => {
-  const classes = useStyles();
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+  const classes = makeStyles((theme) => ({
+    image: {
+      width: isDesktopView ? '250px' : '200px',
+      height: 'auto',
+      objectFit: 'cover',
+      borderRadius: '50%',
+      marginBottom: isDesktopView ? '0%' : '3%',
+    },
+  }))();
 
   const PAGE_NAME = 'Hello World';
   const NAME = 'Home';
