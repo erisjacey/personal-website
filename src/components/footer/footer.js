@@ -31,6 +31,7 @@ const Footer = () => {
   const classes = useStyles();
   const { isDesktopView } = useSelector((state) => state.isDesktopView);
   const mobile = isDesktopView ? '' : '__mobile';
+  const websiteDevelopedBy = isDesktopView ? 'Website developed by ' : '';
 
   return (
     <Navbar bg="primary1" variant="dark" className={`footer${mobile}`}>
@@ -39,7 +40,7 @@ const Footer = () => {
         <Navbar.Collapse className="footer__left" id="basic-navbar-nav">
           <Nav className="float-left">
             <Navbar.Text className="footer__left__text">
-              Website developed by Eris Jacey Masagca, 2021.
+              {`${websiteDevelopedBy}Eris Jacey Masagca, 2021.`}
             </Navbar.Text>
           </Nav>
           <Nav className="ms-auto gap-2">
