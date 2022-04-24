@@ -1,46 +1,48 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Accordion, AccordionDetails, AccordionSummary,
-  List, ListItem, ListItemText,
   Table, TableContainer, TableHead, TableRow, TableCell, TableBody,
-  Grid, Typography, Button, Link, Paper,
+  Grid, Typography, Link, Paper,
 } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 import './moduleReviewAccordion.scss';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(18),
-  },
-  secondaryHeading: {
-    fontSize: theme.typography.pxToRem(18),
-    fontWeight: 'bold',
-    color: theme.palette.text.primary,
-  },
-  tertiaryHeading: {
-    fontSize: theme.typography.pxToRem(18),
-    color: theme.palette.text.secondary,
-  },
-  sectionHeading: {
-    fontSize: theme.typography.pxToRem(18),
-    fontWeight: 'bold',
-    color: theme.palette.text.primary,
-  },
-  sectionScore: {
-    fontSize: theme.typography.pxToRem(14),
-    fontWeight: 'bold',
-  },
-  sectionText: {
-    fontSize: theme.typography.pxToRem(14),
-  },
-}));
-
 const ModuleReviewAccordion = ({ module }) => {
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+  const mobile = isDesktopView ? '' : '__mobile';
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      width: '100%',
+    },
+    heading: {
+      fontSize: theme.typography.pxToRem(18),
+    },
+    secondaryHeading: {
+      fontSize: theme.typography.pxToRem(18),
+      fontWeight: 'bold',
+      color: theme.palette.text.primary,
+    },
+    tertiaryHeading: {
+      fontSize: theme.typography.pxToRem(18),
+      color: theme.palette.text.secondary,
+    },
+    sectionHeading: {
+      fontSize: theme.typography.pxToRem(18),
+      fontWeight: 'bold',
+      color: theme.palette.text.primary,
+    },
+    sectionScore: {
+      fontSize: theme.typography.pxToRem(14),
+      fontWeight: 'bold',
+    },
+    sectionText: {
+      fontSize: theme.typography.pxToRem(14),
+    },
+  }));
   const classes = useStyles();
 
   const {
@@ -99,7 +101,7 @@ const ModuleReviewAccordion = ({ module }) => {
       direction="column"
       className="module-review-accordion__section"
     >
-      <Grid item className="module-review-accordion__section__title">
+      <Grid item className={`module-review-accordion__section__title${mobile}`}>
         {renderTitle('Assessment')}
       </Grid>
       <Grid item>
@@ -236,15 +238,19 @@ const ModuleReviewAccordion = ({ module }) => {
           justifyContent="space-around"
           alignItems="center"
         >
-          <Grid item xs={2}>
+          <Grid item xs={isDesktopView ? 2 : 3}>
             <Typography className={classes.heading}>{code}</Typography>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs={isDesktopView ? 7 : 8}>
             <Typography className={classes.secondaryHeading}>{name}</Typography>
           </Grid>
-          <Grid item xs={3}>
-            <Typography className={classes.tertiaryHeading}>{faculty}</Typography>
-          </Grid>
+          {isDesktopView
+            ? (
+              <Grid item xs={3}>
+                <Typography className={classes.tertiaryHeading}>{faculty}</Typography>
+              </Grid>
+            )
+            : null}
         </Grid>
       </AccordionSummary>
       <AccordionDetails>
@@ -253,6 +259,7 @@ const ModuleReviewAccordion = ({ module }) => {
           direction="column"
           justifyContent="center"
           alignItems="flex-start"
+          spacing={isDesktopView ? 0 : 3}
         >
           {renderExtraInfo()}
           {renderAssessment()}

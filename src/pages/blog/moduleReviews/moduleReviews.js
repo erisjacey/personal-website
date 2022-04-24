@@ -1,9 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Grid,
 } from '@material-ui/core';
@@ -25,6 +26,9 @@ import Y3S2 from './y3s2';
 import './moduleReviews.scss';
 
 const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
+  const { isDesktopView } = useSelector((state) => state.isDesktopView);
+  const mobile = isDesktopView ? '' : '__mobile';
+
   const SEMESTER_Y1S1 = {
     name: 'Year 1, Semester 1',
     description: `Aug 2019 ${LONG_DASH} Dec 2019`,
@@ -114,7 +118,7 @@ const ModuleReviews = ({ path, pageName, pageSubHeader }) => {
   const renderSemesterPage = (name, subHeader, Component) => (
     <div>
       <PageHeader name={name} subHeader={subHeader} />
-      <div className="module-reviews__accordions">
+      <div className={`module-reviews__accordions${mobile}`}>
         <Component />
       </div>
     </div>
