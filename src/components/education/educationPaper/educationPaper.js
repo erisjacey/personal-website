@@ -15,7 +15,7 @@ const EducationPaper = ({
   const useStyles = makeStyles((theme) => ({
     root: {
       minHeight: '300px',
-      width: isDesktopView ? '700px' : '300px',
+      width: isDesktopView ? '700px' : '350px',
       padding: isDesktopView ? '2% 0%' : '2%',
     },
     image: {
