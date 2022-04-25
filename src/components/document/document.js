@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import './document.scss';
 
 const Document = ({ name, body }) => {

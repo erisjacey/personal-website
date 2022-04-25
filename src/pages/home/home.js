@@ -1,7 +1,7 @@
 /* eslint-disable no-multi-str */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import PageHeader from 'myComponents/pageHeader';
 import Document from 'myComponents/document';
 import TextBlock from 'myComponents/textBlock';

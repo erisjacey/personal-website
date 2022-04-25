@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, StyledEngineProvider, createTheme, adaptV4Theme } from '@mui/material/styles';
 import { setIsDesktopView } from 'myRedux/actions';
 import NavBar from 'myComponents/navbar';
 import Footer from 'myComponents/footer';
@@ -19,7 +19,7 @@ import Blog from 'myBlogPage';
 import Contact from 'myContactPage';
 import './App.scss';
 
-const theme = createMuiTheme({
+const theme = createTheme(adaptV4Theme({
   typography: {
     fontFamily: 'Open Sans',
     button: {
@@ -42,7 +42,7 @@ const theme = createMuiTheme({
       dark: '#2b7a78',
     },
   },
-});
+}));
 
 const RouteWithComponents = ({
   exact, path, component: Component, ...rest
@@ -105,22 +105,24 @@ const App = () => {
 
   return (
     <div className="main-page">
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="home" />
-            </Route>
-            {PAGES.map((page) => (
-              <RouteWithComponents
-                key={page.path}
-                path={page.path}
-                component={page.component}
-              />
-            ))}
-          </Switch>
-        </Router>
-      </ThemeProvider>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Redirect to="home" />
+              </Route>
+              {PAGES.map((page) => (
+                <RouteWithComponents
+                  key={page.path}
+                  path={page.path}
+                  component={page.component}
+                />
+              ))}
+            </Switch>
+          </Router>
+        </ThemeProvider>
+      </StyledEngineProvider>
     </div>
   );
 };

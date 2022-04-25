@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import Document from 'myComponents/document';
 import TextBlock from 'myComponents/textBlock';
 import SnapshotPicture1 from 'myProjectsAssets/upside-down_snapshot-1.png';

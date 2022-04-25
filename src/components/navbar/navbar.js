@@ -4,10 +4,10 @@ import {
 } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Link, Breadcrumbs,
-} from '@material-ui/core';
+} from '@mui/material';
 import SignatureIcon from 'myAssets/signature_sm.jpg';
 import './navbar.scss';
 
@@ -106,7 +106,7 @@ const NavBar = () => {
               href={breadcrumb.link}
               onClick={() => dispatch(setCurrentLink(breadcrumb.link))}
               className="navbar__breadcrumbs__link"
-            >
+              underline="hover">
               {breadcrumb.name}
             </Link>
           )

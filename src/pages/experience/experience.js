@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from 'myComponents/pageHeader';
 import {
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import { LONG_DASH } from 'myConstants';
 import ExperiencePaper from 'myExperienceComponents/experiencePaper';
 import LogoMatchub from 'myExperienceAssets/matchub_logo.png';

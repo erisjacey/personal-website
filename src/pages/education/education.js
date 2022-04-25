@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from 'myComponents/pageHeader';
 import {
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import { LONG_DASH } from 'myConstants';
 import EducationPaper from 'myEducationComponents/educationPaper';
 import LogoNUS from 'myEducationAssets/nus_logo.png';

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Paper, Grid, Typography, Button, Link, Chip,
-} from '@material-ui/core';
+} from '@mui/material';
 import './experiencePaper.scss';
 
 const ExperiencePaper = ({
@@ -141,7 +141,11 @@ const ExperiencePaper = ({
         ))}
       </Grid>
       <Grid item>
-        <Link href={link.url} target="_blank" className={classes.link}>
+        <Link
+          href={link.url}
+          target="_blank"
+          className={classes.link}
+          underline="hover">
           <Button size="medium" variant="contained" color="primary" className={classes.button}>
             {link.name}
           </Button>

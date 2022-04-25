@@ -3,11 +3,11 @@ import {
   Container, Navbar, Nav,
 } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Link,
-} from '@material-ui/core';
-import { Email, GitHub, LinkedIn } from '@material-ui/icons';
+} from '@mui/material';
+import { Email, GitHub, LinkedIn } from '@mui/icons-material';
 import './footer.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,7 @@ const Footer = () => {
                 href="mailto:eris_jacey@hotmail.com"
                 target="_blank"
                 rel="noopener"
-              >
+                underline="hover">
                 <Email fontSize="large" className="footer__right__icon" />
               </Link>
             </Navbar.Text>
@@ -58,7 +58,7 @@ const Footer = () => {
                 href="https://github.com/erisjacey"
                 target="_blank"
                 rel="noopener"
-              >
+                underline="hover">
                 <GitHub fontSize="large" className="footer__right__icon" />
               </Link>
             </Navbar.Text>
@@ -67,7 +67,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/eris-jacey-masagca-309795197/"
                 target="_blank"
                 rel="noopener"
-              >
+                underline="hover">
                 <LinkedIn fontSize="large" className="footer__right__icon" />
               </Link>
             </Navbar.Text>

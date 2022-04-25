@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Card, CardActionArea, CardContent, CardMedia,
   Typography, Link,
-} from '@material-ui/core';
+} from '@mui/material';
 import './blogCard.scss';
 
 const BlogCard = ({

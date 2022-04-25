@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { setCurrentLink } from 'myRedux/actions';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Card, CardActionArea, CardActions, CardContent, CardMedia,
   Typography, Button, Link,
-} from '@material-ui/core';
-import { GitHub } from '@material-ui/icons';
+} from '@mui/material';
+import { GitHub } from '@mui/icons-material';
 import './projectCard.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
     height: '110px',
   },
   link: {
+    color: theme.palette.primary.dark,
     '&:hover': {
       textDecoration: 'none',
-      color: '#2b7a78',
+      color: theme.palette.secondary.dark,
     },
   },
   button: {
@@ -54,6 +55,7 @@ const ProjectCard = ({
           onClick={() => {
             dispatch(setCurrentLink(link));
           }}
+          underline="hover"
         >
           <CardMedia
             component="img"
@@ -91,7 +93,7 @@ const ProjectCard = ({
           onClick={() => {
             dispatch(setCurrentLink(link));
           }}
-        >
+          underline="hover">
           <GitHub fontSize="small" />
         </Link>
       </CardActions>
@@ -107,7 +109,7 @@ ProjectCard.propTypes = {
   seeMore: PropTypes.shape({
     text: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   github: PropTypes.string.isRequired,
 };
 

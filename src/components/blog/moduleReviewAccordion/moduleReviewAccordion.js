@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import {
   Accordion, AccordionDetails, AccordionSummary,
   Table, TableContainer, TableHead, TableRow, TableCell, TableBody,
   Grid, Typography, Link, Paper,
-} from '@material-ui/core';
-import { ExpandMore } from '@material-ui/icons';
+} from '@mui/material';
+import { ExpandMore } from '@mui/icons-material';
 import './moduleReviewAccordion.scss';
 
 const ModuleReviewAccordion = ({ module }) => {
@@ -89,7 +89,12 @@ const ModuleReviewAccordion = ({ module }) => {
         {renderText(`Exam: ${hasExam}`)}
       </Grid>
       <Grid item>
-        {renderText(<Link href={link} color="secondary" target="_blank" rel="noopener">Link to NUSMods</Link>)}
+        {renderText(<Link
+          href={link}
+          color="secondary"
+          target="_blank"
+          rel="noopener"
+          underline="hover">Link to NUSMods</Link>)}
       </Grid>
     </Grid>
   );

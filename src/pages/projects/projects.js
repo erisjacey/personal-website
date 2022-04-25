@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import {
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import PageHeader from 'myComponents/pageHeader';
 import ProjectCard from 'myProjectsComponents/projectCard';
 import ThumbnailDailyCakeyBot from 'myProjectsAssets/daily-cakey-bot_thumbnail.jpeg';

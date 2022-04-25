@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import {
   Grid,
-} from '@material-ui/core';
+} from '@mui/material';
 import PageHeader from 'myComponents/pageHeader';
 import BlogCard from 'myBlogComponents/blogCard';
 import ThumbnailModuleReviews from 'myBlogAssets/module-reviews_thumbnail.jpeg';
