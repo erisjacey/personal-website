@@ -21,7 +21,7 @@ const BlogCard = ({
     },
     link: {
       '&:hover': {
-        color: '#2b7a78',
+        color: theme.palette.secondary.dark,
       },
     },
     image: {

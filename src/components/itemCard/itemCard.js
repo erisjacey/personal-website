@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     '&:hover': {
       textDecoration: 'none',
-      color: '#2b7a78',
+      color: theme.palette.secondary.dark,
     },
   },
   button: {
@@ -53,7 +53,8 @@ const ItemCard = ({
             dispatch(setCurrentLink(link));
           }}
           className={classes.link}
-          underline="hover">
+          underline="hover"
+        >
           <CardMedia
             component="img"
             alt={name}

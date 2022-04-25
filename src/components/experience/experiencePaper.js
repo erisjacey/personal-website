@@ -60,8 +60,8 @@ const ExperiencePaper = ({
       fontWeight: 'bold',
       marginTop: '10%',
       '&:hover': {
-        backgroundColor: '#3aafa9',
-        color: '#feffff',
+        backgroundColor: theme.palette.secondary.main,
+        color: theme.palette.primary.light,
       },
     },
   }));

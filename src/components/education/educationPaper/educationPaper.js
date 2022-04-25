@@ -56,8 +56,8 @@ const EducationPaper = ({
       fontWeight: 'bold',
       marginTop: isDesktopView ? '10%' : '15%',
       '&:hover': {
-        backgroundColor: '#3aafa9',
-        color: '#feffff',
+        backgroundColor: theme.palette.secondary.main,
+        color: theme.palette.primary.light,
       },
     },
   }));
