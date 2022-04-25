@@ -15,8 +15,8 @@ const ExperiencePaper = ({
   const useStyles = makeStyles((theme) => ({
     root: {
       minHeight: '300px',
-      width: isDesktopView ? '700px' : '350px',
-      padding: isDesktopView ? '2% 0%' : '2%',
+      width: isDesktopView ? '700px' : '335px',
+      padding: isDesktopView ? '2% 0%' : '2% 1%',
     },
     image: {
       height: isDesktopView ? '180px' : '100px',
